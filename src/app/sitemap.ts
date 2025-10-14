@@ -1,20 +1,43 @@
 import { MetadataRoute } from 'next';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// This function can be updated to fetch dynamic routes from a database.
+async function getDynamicRoutes() {
+  // In a real app, you might fetch blog posts, products, etc.
+  // For now, we'll return an empty array.
+  // Example:
+  // const posts = await fetch('https://api.example.com/posts');
+  // return posts.map((post) => ({
+  //   url: `/blog/${post.slug}`,
+  //   lastModified: new Date(post.updatedAt),
+  // }));
+  return [];
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.dropped-pin.com'; // Replace with your actual domain
 
-  return [
+  const staticRoutes = [
     {
       url: `${baseUrl}/`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'monthly',
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/dashboard`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.5,
     },
   ];
+
+  const dynamicRoutes = await getDynamicRoutes();
+
+  return [...staticRoutes, ...dynamicRoutes];
 }
