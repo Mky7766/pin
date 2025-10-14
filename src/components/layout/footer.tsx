@@ -19,6 +19,9 @@ export function Footer() {
           <Button variant="link" size="sm" asChild className="text-muted-foreground">
             <Link href="/privacy-policy">Privacy Policy</Link>
           </Button>
+          <Button variant="link" size="sm" asChild className="text-muted-foreground">
+            <Link href="/terms-and-conditions">Terms & Conditions</Link>
+          </Button>
         </nav>
       </div>
     </footer>
