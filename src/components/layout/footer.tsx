@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -14,6 +15,9 @@ export function Footer() {
           </Button>
           <Button variant="link" size="sm" asChild className="text-muted-foreground">
             <Link href="/disclaimer">Disclaimer</Link>
+          </Button>
+          <Button variant="link" size="sm" asChild className="text-muted-foreground">
+            <Link href="/privacy-policy">Privacy Policy</Link>
           </Button>
         </nav>
       </div>
