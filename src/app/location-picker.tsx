@@ -37,8 +37,8 @@ export default function LocationPicker() {
   const [apiKeyMissing, setApiKeyMissing] = useState(false);
 
   useEffect(() => {
-    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || 'YOUR_GOOGLE_MAPS_API_KEY_HERE';
-    if (apiKey === 'YOUR_GOOGLE_MAPS_API_KEY_HERE') {
+    const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+    if (!apiKey || apiKey === 'YOUR_GOOGLE_MAPS_API_KEY_HERE') {
       setApiKeyMissing(true);
       return;
     }
@@ -193,9 +193,6 @@ export default function LocationPicker() {
         <CardTitle className="font-headline text-3xl md:text-4xl text-primary">
           Dropped Pin
         </CardTitle>
-        <p className="text-muted-foreground pt-2">
-          📍Just Click On The Map – Get Location, Copy, And Share!📍
-        </p>
       </CardHeader>
       <CardContent>
         {apiKeyMissing ? (
@@ -238,9 +235,6 @@ export default function LocationPicker() {
             </a>
           </Button>
         </div>
-        <p className="text-center text-sm text-muted-foreground mt-6">
-          ➡️ Click And Drop A Pin On The Map | Copy Or Share Location
-        </p>
       </CardContent>
     </Card>
   );
