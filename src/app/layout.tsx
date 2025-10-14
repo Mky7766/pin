@@ -7,6 +7,9 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Dropped Pin',
   description: 'Share your location with a simple dropped pin.',
+  icons: {
+    icon: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_Pb2UOmU5QryscCr-gz2XzgvK3uhhfSbF3rfqUpVs7VQEcJh6kBU6FJbMhb9IJClqK1vej4iURwrRt4xPMmSfSiub2EdZnE-JTojkCxwvGmGyiSHbwLnLqQtw-9U30ojK5lV5b7egz0NaLt1kaswvaNvY0S3XHj6k1Tpzsu2KEJyryh07XDRPxmyChkCF/s320/cropped-654798098.png',
+  },
 };
 
 export default function RootLayout({
