@@ -5,8 +5,8 @@ import { Footer } from '@/components/layout/footer';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'BlogSphere',
-  description: 'Create blog posts and get AI-powered title suggestions.',
+  title: 'Dropped Pin',
+  description: 'Share your location with a simple dropped pin.',
 };
 
 export default function RootLayout({
