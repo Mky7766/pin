@@ -22,9 +22,6 @@ export function Header() {
           <Button variant="ghost" asChild>
             <Link href="/blog">New Pin</Link>
           </Button>
-          <Button variant="ghost" asChild>
-            <Link href="/sitemap">Sitemap</Link>
-          </Button>
         </nav>
       </div>
     </header>
