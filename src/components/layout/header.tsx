@@ -1,6 +1,16 @@
+
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { Menu } from 'lucide-react';
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetClose,
+} from '@/components/ui/sheet';
 
 export function Header() {
   return (
@@ -15,7 +25,9 @@ export function Header() {
             className="h-8 w-auto"
           />
         </Link>
-        <nav className="flex items-center gap-1 sm:gap-4 flex-wrap justify-end">
+
+        {/* Desktop Navigation */}
+        <nav className="hidden items-center gap-1 sm:gap-4 md:flex">
           <Button variant="ghost" asChild>
             <Link href="/">Home</Link>
           </Button>
@@ -26,6 +38,49 @@ export function Header() {
             <Link href="/about">About Us</Link>
           </Button>
         </nav>
+
+        {/* Mobile Navigation */}
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Open menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right">
+              <nav className="flex flex-col gap-4 pt-6">
+                <SheetClose asChild>
+                  <Button
+                    variant="ghost"
+                    className="justify-start text-lg"
+                    asChild
+                  >
+                    <Link href="/">Home</Link>
+                  </Button>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Button
+                    variant="ghost"
+                    className="justify-start text-lg"
+                    asChild
+                  >
+                    <Link href="/blog">New Pin</Link>
+                  </Button>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Button
+                    variant="ghost"
+                    className="justify-start text-lg"
+                    asChild
+                  >
+                    <Link href="/about">About Us</Link>
+                  </Button>
+                </SheetClose>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );
