@@ -81,6 +81,8 @@ export default function LocationPicker() {
       center: jaipur,
       streetViewControl: false,
       mapTypeControl: true,
+      gestureHandling: 'greedy',
+      rotateControl: true,
     });
 
     mapInstance.current.addListener('click', function (e: any) {
@@ -130,18 +132,18 @@ export default function LocationPicker() {
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        const lat = position.coords.latitude.toFixed(6);
-        const lng = position.coords.longitude.toFixed(6);
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
         const accuracy = position.coords.accuracy;
         const googleMapsUrl = `https://www.google.com/maps?q=${lat},${lng}`;
 
         setLocationLink(googleMapsUrl);
-        setCoordinates(`${lat}, ${lng} (±${Math.round(accuracy)}m)`);
+        setCoordinates(`${lat.toFixed(6)}, ${lng.toFixed(6)} (±${Math.round(accuracy)}m)`);
         setMapsLink(googleMapsUrl);
         setWhatsappLink(`https://wa.me/?text=📍%20Location:%20${encodeURIComponent(googleMapsUrl)}`);
         setEmailLink(`mailto:?subject=Dropped%20Pin&body=📍%20Location:%20${encodeURIComponent(googleMapsUrl)}`);
         
-        const newPosition = { lat: parseFloat(lat), lng: parseFloat(lng) };
+        const newPosition = { lat: lat, lng: lng };
         mapInstance.current?.setCenter(newPosition);
         mapInstance.current?.setZoom(18);
 
