@@ -22,7 +22,6 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from '@/components/ui/dialog';
 import Image from 'next/image';
 
@@ -99,8 +98,8 @@ export default function LocationPicker() {
     });
 
     mapInstance.current.addListener('click', function (e: any) {
-      const lat = e.latLng.lat().toFixed(6);
-      const lng = e.latLng.lng().toFixed(6);
+      const lat = e.latLng.lat();
+      const lng = e.latLng.lng();
       const googleMapsUrl = `https://www.google.com/maps?q=${lat},${lng}`;
 
       updateLocationDetails(lat, lng, googleMapsUrl);
