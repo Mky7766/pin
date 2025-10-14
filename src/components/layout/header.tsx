@@ -20,9 +20,6 @@ export function Header() {
             <Link href="/">Home</Link>
           </Button>
           <Button variant="ghost" asChild>
-            <Link href="/dashboard">Dashboard</Link>
-          </Button>
-          <Button variant="ghost" asChild>
             <Link href="/blog">New Pin</Link>
           </Button>
         </nav>
