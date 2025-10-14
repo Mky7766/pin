@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://www.dropped-pin.com/sitemap.xml',
+    sitemap: 'https://www.droppedpin.xyz/sitemap.xml',
   };
 }

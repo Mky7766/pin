@@ -14,7 +14,7 @@ async function getDynamicRoutes() {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.dropped-pin.com'; // Replace with your actual domain
+  const baseUrl = 'https://www.droppedpin.xyz'; // Replace with your actual domain
 
   const staticRoutes = [
     {
