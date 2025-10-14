@@ -10,6 +10,8 @@ import {
   SheetContent,
   SheetTrigger,
   SheetClose,
+  SheetTitle,
+  SheetHeader,
 } from '@/components/ui/sheet';
 
 export function Header() {
@@ -27,7 +29,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-1 sm:gap-4 md:flex">
+        <nav className="hidden flex-wrap items-center gap-1 sm:gap-4 md:flex">
           <Button variant="ghost" asChild>
             <Link href="/">Home</Link>
           </Button>
@@ -49,6 +51,9 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+              </SheetHeader>
               <nav className="flex flex-col gap-4 pt-6">
                 <SheetClose asChild>
                   <Button
