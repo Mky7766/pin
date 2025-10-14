@@ -4,16 +4,27 @@ import { useState, useRef, useEffect } from 'react';
 import {
   AlertCircle,
   Clipboard,
+  Download,
   Link as LinkIcon,
   LocateFixed,
   Mail,
   MapPin,
   MessageCircle,
+  QrCode,
 } from 'lucide-react';
+import QRCode from 'qrcode';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import Image from 'next/image';
 
 declare global {
   interface Window {
@@ -27,6 +38,8 @@ export default function LocationPicker() {
   const [mapsLink, setMapsLink] = useState('#');
   const [whatsappLink, setWhatsappLink] = useState('#');
   const [emailLink, setEmailLink] = useState('#');
+  const [qrCodeDataUrl, setQrCodeDataUrl] = useState('');
+  const [isQrCodeDialogOpen, setIsQrCodeDialogOpen] = useState(false);
 
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstance = useRef<any>(null);
@@ -90,12 +103,8 @@ export default function LocationPicker() {
       const lng = e.latLng.lng().toFixed(6);
       const googleMapsUrl = `https://www.google.com/maps?q=${lat},${lng}`;
 
-      setLocationLink(googleMapsUrl);
-      setCoordinates(`${lat}, ${lng}`);
-      setMapsLink(googleMapsUrl);
-      setWhatsappLink(`https://wa.me/?text=📍%20Location:%20${encodeURIComponent(googleMapsUrl)}`);
-      setEmailLink(`mailto:?subject=Dropped%20Pin&body=📍%20Location:%20${encodeURIComponent(googleMapsUrl)}`);
-
+      updateLocationDetails(lat, lng, googleMapsUrl);
+      
       markerRef.current?.setMap(null);
       circleRef.current?.setMap(null);
 
@@ -104,6 +113,14 @@ export default function LocationPicker() {
         map: mapInstance.current,
       });
     });
+  };
+  
+  const updateLocationDetails = (lat: number, lng: number, googleMapsUrl: string, accuracy?: number) => {
+    setLocationLink(googleMapsUrl);
+    setCoordinates(`${lat.toFixed(6)}, ${lng.toFixed(6)}${accuracy ? ` (±${Math.round(accuracy)}m)` : ''}`);
+    setMapsLink(googleMapsUrl);
+    setWhatsappLink(`https://wa.me/?text=📍%20Location:%20${encodeURIComponent(googleMapsUrl)}`);
+    setEmailLink(`mailto:?subject=Dropped%20Pin&body=📍%20Location:%20${encodeURIComponent(googleMapsUrl)}`);
   };
 
   const handleCopyLink = () => {
@@ -114,6 +131,30 @@ export default function LocationPicker() {
     navigator.clipboard.writeText(locationLink).then(() => {
       alert('🔗 Link Copied!');
     });
+  };
+
+  const handleGenerateQrCode = async () => {
+    if (!locationLink) {
+      alert('Please select a location on the map first.');
+      return;
+    }
+    try {
+      const url = await QRCode.toDataURL(locationLink, { width: 300 });
+      setQrCodeDataUrl(url);
+      setIsQrCodeDialogOpen(true);
+    } catch (err) {
+      console.error(err);
+      alert('Could not generate QR code.');
+    }
+  };
+
+  const handleDownloadQrCode = () => {
+    const link = document.createElement('a');
+    link.href = qrCodeDataUrl;
+    link.download = 'location-qr-code.png';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handleGetCurrentLocation = () => {
@@ -137,13 +178,9 @@ export default function LocationPicker() {
         const accuracy = position.coords.accuracy;
         const googleMapsUrl = `https://www.google.com/maps?q=${lat},${lng}`;
 
-        setLocationLink(googleMapsUrl);
-        setCoordinates(`${lat.toFixed(6)}, ${lng.toFixed(6)} (±${Math.round(accuracy)}m)`);
-        setMapsLink(googleMapsUrl);
-        setWhatsappLink(`https://wa.me/?text=📍%20Location:%20${encodeURIComponent(googleMapsUrl)}`);
-        setEmailLink(`mailto:?subject=Dropped%20Pin&body=📍%20Location:%20${encodeURIComponent(googleMapsUrl)}`);
+        updateLocationDetails(lat, lng, googleMapsUrl, accuracy);
         
-        const newPosition = { lat: lat, lng: lng };
+        const newPosition = { lat, lng };
         mapInstance.current?.setCenter(newPosition);
         mapInstance.current?.setZoom(18);
 
@@ -222,6 +259,7 @@ export default function LocationPicker() {
         <div className="flex flex-wrap items-center justify-center gap-2 mt-4">
           <Button onClick={handleCopyLink}><Clipboard className="mr-2" /> Copy Link</Button>
           <Button onClick={handleGetCurrentLocation}><LocateFixed className="mr-2" /> Live Location</Button>
+          <Button onClick={handleGenerateQrCode}><QrCode className="mr-2" /> Generate QR Code</Button>
           <Button variant="outline" asChild disabled={mapsLink === '#'}>
             <a href={mapsLink} target="_blank" rel="noopener noreferrer">
               <LinkIcon className="mr-2" /> Open in Google Maps
@@ -238,6 +276,30 @@ export default function LocationPicker() {
             </a>
           </Button>
         </div>
+
+        <Dialog open={isQrCodeDialogOpen} onOpenChange={setIsQrCodeDialogOpen}>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Location QR Code</DialogTitle>
+            </DialogHeader>
+            <div className="flex flex-col items-center gap-4">
+              {qrCodeDataUrl && (
+                <Image
+                  src={qrCodeDataUrl}
+                  alt="Location QR Code"
+                  width={300}
+                  height={300}
+                  className="rounded-md"
+                />
+              )}
+              <Button onClick={handleDownloadQrCode}>
+                <Download className="mr-2 h-4 w-4" />
+                Download QR Code
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
+
       </CardContent>
     </Card>
   );
