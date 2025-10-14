@@ -15,7 +15,7 @@ export function Header() {
             className="h-8 w-auto"
           />
         </Link>
-        <nav className="flex items-center gap-4">
+        <nav className="flex items-center gap-1 sm:gap-4 flex-wrap justify-end">
           <Button variant="ghost" asChild>
             <Link href="/">Home</Link>
           </Button>
