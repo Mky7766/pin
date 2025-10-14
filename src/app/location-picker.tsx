@@ -80,7 +80,7 @@ export default function LocationPicker() {
       zoom: 6,
       center: jaipur,
       streetViewControl: false,
-      mapTypeControl: false,
+      mapTypeControl: true,
     });
 
     mapInstance.current.addListener('click', function (e: any) {
