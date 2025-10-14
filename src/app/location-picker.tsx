@@ -141,14 +141,15 @@ export default function LocationPicker() {
         setWhatsappLink(`https://wa.me/?text=📍%20Location:%20${encodeURIComponent(googleMapsUrl)}`);
         setEmailLink(`mailto:?subject=Dropped%20Pin&body=📍%20Location:%20${encodeURIComponent(googleMapsUrl)}`);
         
-        mapInstance.current?.setCenter({ lat: parseFloat(lat), lng: parseFloat(lng) });
+        const newPosition = { lat: parseFloat(lat), lng: parseFloat(lng) };
+        mapInstance.current?.setCenter(newPosition);
         mapInstance.current?.setZoom(18);
 
         markerRef.current?.setMap(null);
         circleRef.current?.setMap(null);
 
         markerRef.current = new window.google.maps.Marker({
-          position: { lat: parseFloat(lat), lng: parseFloat(lng) },
+          position: newPosition,
           map: mapInstance.current,
           title: `Your Location (±${Math.round(accuracy)}m accuracy)`,
         });
@@ -160,7 +161,7 @@ export default function LocationPicker() {
           fillColor: '#3F51B5',
           fillOpacity: 0.15,
           map: mapInstance.current,
-          center: { lat: parseFloat(lat), lng: parseFloat(lng) },
+          center: newPosition,
           radius: accuracy,
         });
       },
