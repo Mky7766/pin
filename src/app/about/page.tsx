@@ -15,7 +15,7 @@ export default function AboutPage() {
         <div className="my-12 not-prose">
           <div className="flex flex-col items-center text-center">
             <Avatar className="h-24 w-24 mb-4 ring-2 ring-primary ring-offset-4 ring-offset-background">
-              <AvatarImage src="https://picsum.photos/seed/founder/200/200" alt="Mukesh Kumar Yogi" />
+              <AvatarImage src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_BXmz0vq7Ke0_UTIVGnKxrlFUXzOU9jyv-EDwrtzR8Ib06sqbdm6D3BQMjOv4LHWhDjSi1G_9ELzDPOpGjm3U2GRNnRLc9-m4Sa_I-ByjJkXpuSHnaVwEWKCWRAS1vSdigM4mnvaEJttvytp-Anlb2-bndXVuhsTEXS3k94F-47EgnQVggQMtk_PYmmyB/s1712/Mukesh%20Kumar%20Yogi.jpg" alt="Mukesh Kumar Yogi" />
               <AvatarFallback>MK</AvatarFallback>
             </Avatar>
             <h4 className="text-xl font-bold">Mukesh Kumar Yogi</h4>
