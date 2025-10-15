@@ -15,6 +15,15 @@ import { placeholderImages } from '@/lib/placeholder-images';
 
 const blogPosts = [
   {
+    title: 'Dropped Pin का उपयोग करके पिन कैसे गिराएं?',
+    slug: '/blog/how-to-drop-a-pin',
+    description:
+      'Dropped Pin का उपयोग करके किसी भी स्थान पर पिन कैसे छोड़ें, tọa표 कैसे प्राप्त करें, और उसे कैसे साझा करें, इस पर एक विस्तृत गाइड।',
+    image: placeholderImages[4],
+    tags: ['Guide', 'How-To', 'Hindi'],
+    date: 'October 15, 2025',
+  },
+  {
     title: 'Google Maps पर पिन कैसे गिराएं',
     slug: '/blog/how-to-drop-a-pin-on-google-maps',
     description:
@@ -22,15 +31,6 @@ const blogPosts = [
     image: placeholderImages[0],
     tags: ['Guide', 'How-To', 'Google Maps', 'Hindi'],
     date: 'October 16, 2025',
-  },
-  {
-    title: 'How to Drop a Pin?',
-    slug: '/blog/how-to-drop-a-pin',
-    description:
-      'Dropped Pin का उपयोग करके किसी भी स्थान पर पिन कैसे छोड़ें, tọa표 कैसे प्राप्त करें, और उसे कैसे साझा करें, इस पर एक विस्तृत गाइड।',
-    image: placeholderImages[4],
-    tags: ['Guide', 'How-To', 'Hindi'],
-    date: 'October 15, 2025',
   },
   {
     title: 'Top 5 Hidden Features of Dropped Pin You Should Know',
