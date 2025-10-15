@@ -20,6 +20,10 @@ async function getDynamicRoutes() {
       slug: 'how-to-send-a-dropped-pin-hindi',
       updatedAt: '2025-10-19T09:00:00+05:30',
     },
+    {
+      slug: 'location-ka-qr-code-kaise-banayen',
+      updatedAt: '2025-10-20T09:00:00+05:30',
+    },
   ];
 
   return posts.map((post) => ({

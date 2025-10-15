@@ -15,10 +15,19 @@ import { placeholderImages } from '@/lib/placeholder-images';
 
 const blogPosts = [
   {
+    title: 'किसी भी लोकेशन का QR कोड कैसे बनाएं?',
+    slug: '/blog/location-ka-qr-code-kaise-banayen',
+    description:
+      'जानें कि Dropped Pin टूल का उपयोग करके किसी भी मैप लोकेशन का QR कोड कैसे बनाएं। यह आसान है और इसे व्हाट्सएप, ईमेल या कहीं भी साझा किया जा सकता है।',
+    image: placeholderImages[1],
+    tags: ['QR Code', 'How-To', 'Hindi', 'Location'],
+    date: 'October 20, 2025',
+  },
+  {
     title: 'गिराया हुआ पिन (Dropped Pin) कैसे भेजें: एक पूरी गाइड',
     slug: '/blog/how-to-send-a-dropped-pin-hindi',
     description:
-      'जानें कि Google Maps से ड्रॉप किए गए पिन को व्हाट्सएप, ईमेल या लिंक के माध्यम से कैसे भेजें। सटीक लोकेशन साझा करने के लिए यह एक विस्तृत गाइड है।',
+      'जानें कि Dropped Pin टूल से ड्रॉप किए गए पिन को व्हाट्सएप, ईमेल या लिंक के माध्यम से कैसे भेजें। सटीक लोकेशन साझा करने के लिए यह एक विस्तृत गाइड है।',
     image: placeholderImages[6],
     tags: ['How-To', 'Google Maps', 'Hindi', 'Share'],
     date: 'October 19, 2025',
