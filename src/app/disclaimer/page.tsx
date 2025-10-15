@@ -7,7 +7,7 @@ export default function DisclaimerPage() {
         </h1>
         <p className="mb-6">
           The information provided by{' '}
-          <span className="font-bold">DroppedPin.xyz</span> (“we,” “us” or
+          <span className="font-bold">Dropped Pin</span> (“we,” “us” or
           “our”) on this website is for general informational purposes only. All
           information on the site is provided in good faith, however, we make
           no representation or warranty of any kind regarding the accuracy,

@@ -6,7 +6,7 @@ export default function TermsAndConditionsPage() {
           Terms and Conditions
         </h1>
         <p className="mb-6">
-          Welcome to <span className="font-bold">DroppedPin.xyz</span>. By
+          Welcome to <span className="font-bold">Dropped Pin</span>. By
           accessing and using this website, you agree to be bound by the
           following terms and conditions. Please read them carefully. If you do
           not agree with any part of these terms, you should not use this
@@ -17,7 +17,7 @@ export default function TermsAndConditionsPage() {
           1. Use of the Website
         </h2>
         <p className="mb-6">
-          DroppedPin.xyz is a free tool that allows users to retrieve
+          Dropped Pin is a free tool that allows users to retrieve
           geographical coordinates from a dropped pin on a map. You may use
           this tool for personal or business purposes, but you must not misuse
           the site or use it for any illegal or unauthorized activity.
@@ -33,11 +33,11 @@ export default function TermsAndConditionsPage() {
           services.
         </p>
 
-        <h2 className="font-headline text-2xl font-bold mt-8 mb-5">
+        <h2 className="font-headline text_2xl font-bold mt-8 mb-5">
           3. Intellectual Property
         </h2>
         <p className="mb-6">
-          All content, design, layout, and features on DroppedPin.xyz are the
+          All content, design, layout, and features on Dropped Pin are the
           property of the website owner. You may not copy, reproduce, or
           distribute any part of the website without prior written permission.
         </p>

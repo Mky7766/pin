@@ -5,9 +5,9 @@ import { Footer } from '@/components/layout/footer';
 import './globals.css';
 
 const siteConfig = {
-  name: 'Dropped Pin Finder - Free Online Tool to Find Coordinates',
+  name: 'Dropped Pin',
   description:
-    'DroppedPin.xyz is a free online tool to find and share exact location coordinates from a dropped pin on Google Maps. Get latitude and longitude instantly.',
+    'Dropped Pin is a free online tool to find and share exact location coordinates from a dropped pin on Google Maps. Get latitude and longitude instantly.',
   url: 'https://www.droppedpin.xyz',
   ogImage:
     'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_Pb2UOmU5QryscCr-gz2XzgvK3uhhfSbF3rfqUpVs7VQEcJh6kBU6FJbMhb9IJClqK1vej4iURwrRt4xPMmSfSiub2EdZnE-JTojkCxwvGmGyiSHbwLnLqQtw-9U30ojK5lV5b7egz0NaLt1kaswvaNvY0S3XHj6k1Tpzsu2KEJyryh07XDRPxmyChkCF/s320/cropped-654798098.png',
@@ -15,7 +15,7 @@ const siteConfig = {
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
+    default: `${siteConfig.name} Finder - Free Online Tool to Find Coordinates`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
