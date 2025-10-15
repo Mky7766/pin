@@ -13,9 +13,11 @@ const siteConfig = {
     'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_Pb2UOmU5QryscCr-gz2XzgvK3uhhfSbF3rfqUpVs7VQEcJh6kBU6FJbMhb9IJClqK1vej4iURwrRt4xPMmSfSiub2EdZnE-JTojkCxwvGmGyiSHbwLnLqQtw-9U30ojK5lV5b7egz0NaLt1kaswvaNvY0S3XHj6k1Tpzsu2KEJyryh07XDRPxmyChkCF/s320/cropped-654798098.png',
 };
 
+const pageTitle = `${siteConfig.name} Finder - Free Online Tool to Find Coordinates`;
+
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.name} Finder - Free Online Tool to Find Coordinates`,
+    default: pageTitle,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: siteConfig.url,
-    title: siteConfig.name,
+    title: pageTitle,
     description: siteConfig.description,
     images: [
       {
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: siteConfig.name,
+    title: pageTitle,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
