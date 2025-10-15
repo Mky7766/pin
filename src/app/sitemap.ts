@@ -13,10 +13,6 @@ async function getDynamicRoutes() {
       updatedAt: '2025-10-16T09:00:00+05:30',
     },
     {
-      slug: 'how-to-drop-a-pin-on-android',
-      updatedAt: '2025-10-17T09:00:00+05:30',
-    },
-    {
       slug: 'how-to-drop-a-pin-on-android-hindi',
       updatedAt: '2025-10-18T09:00:00+05:30',
     },

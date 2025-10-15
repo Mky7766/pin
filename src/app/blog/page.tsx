@@ -24,15 +24,6 @@ const blogPosts = [
     date: 'October 18, 2025',
   },
   {
-    title: 'How to Drop a Pin on Android: A Step-by-Step Guide',
-    slug: '/blog/how-to-drop-a-pin-on-android',
-    description:
-      'Learn how to drop a pin on Google Maps on your Android device. This guide covers finding coordinates, sharing locations, and more.',
-    image: placeholderImages[5],
-    tags: ['Android', 'How-To', 'Google Maps', 'English'],
-    date: 'October 17, 2025',
-  },
-  {
     title: 'Dropped Pin का उपयोग करके पिन कैसे गिराएं?',
     slug: '/blog/how-to-drop-a-pin',
     description:
