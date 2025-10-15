@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
@@ -5,7 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 export default function AboutPage() {
   return (
     <main className="container mx-auto px-4 py-8">
-      <div className="prose max-w-4xl mx-auto">
+      <div className="prose max-w-4xl mx-auto text-center">
         <h2 className="font-headline text-3xl font-bold mb-4">About Dropped Pin Finder</h2>
         <p className="mb-6">
           <span className="font-bold">Dropped Pin</span> is a free and user-friendly online tool designed to help people locate exact coordinates of any pinned location on Google Maps. Whether you’re trying to share your current location, mark a meeting point, or identify a specific spot on the map, our tool makes it simple and quick.
