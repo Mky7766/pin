@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { placeholderImages } from '@/lib/placeholder-images';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ShareButtons } from '@/components/blog/share-buttons';
+import { AuthorBio } from '@/components/blog/author-bio';
+
 
 const pageTitle = "How to Drop a Pin? - Dropped Pin Finder";
 const pageDescription = "Dropped Pin का उपयोग करके किसी भी स्थान पर पिन कैसे छोड़ें, tọa표 कैसे प्राप्त करें, और उसे कैसे साझा करें, इस पर एक विस्तृत गाइड।";
@@ -162,6 +164,7 @@ export default function BlogPost() {
             अब आप Dropped Pin का उपयोग करने के लिए पूरी तरह तैयार हैं। जाएं और इसे आजमाएं!
           </p>
 
+          <AuthorBio />
           <ShareButtons url={pageUrl} title={pageTitle} description={pageDescription} />
 
         </article>
