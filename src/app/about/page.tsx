@@ -14,7 +14,7 @@ export default function AboutPage() {
         
         <div className="my-12 not-prose">
           <div className="flex flex-col items-center text-center">
-            <Avatar className="h-24 w-24 mb-4">
+            <Avatar className="h-24 w-24 mb-4 ring-2 ring-primary ring-offset-4 ring-offset-background">
               <AvatarImage src="https://picsum.photos/seed/founder/200/200" alt="Mukesh Kumar Yogi" />
               <AvatarFallback>MK</AvatarFallback>
             </Avatar>
