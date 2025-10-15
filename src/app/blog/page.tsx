@@ -15,12 +15,12 @@ import { placeholderImages } from '@/lib/placeholder-images';
 
 const blogPosts = [
   {
-    title: 'How to Drop a Pin on Google Maps',
+    title: 'Google Maps पर पिन कैसे गिराएं',
     slug: '/blog/how-to-drop-a-pin-on-google-maps',
     description:
-      'A step-by-step guide on how to drop a pin on Google Maps to get coordinates, save locations, and share them with anyone, anywhere.',
+      'Google Maps पर पिन कैसे गिराएं, निर्देशांक कैसे प्राप्त करें, स्थानों को कैसे सहेजें और उन्हें किसी के भी साथ, कहीं भी साझा करने के बारे में एक विस्तृत गाइड।',
     image: placeholderImages[0],
-    tags: ['Guide', 'How-To', 'Google Maps'],
+    tags: ['Guide', 'How-To', 'Google Maps', 'Hindi'],
     date: 'October 16, 2025',
   },
   {
