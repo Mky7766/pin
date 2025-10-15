@@ -57,8 +57,8 @@ const jsonLd = {
       'url': 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_Pb2UOmU5QryscCr-gz2XzgvK3uhhfSbF3rfqUpVs7VQEcJh6kBU6FJbMhb9IJClqK1vej4iURwrRt4xPMmSfSiub2EdZnE-JTojkCxwvGmGyiSHbwLnLqQtw-9U30ojK5lV5b7egz0NaLt1kaswvaNvY0S3XHj6k1Tpzsu2KEJyryh07XDRPxmyChkCF/s320/cropped-654798098.png'
     }
   },
-  'datePublished': '2024-06-12T09:00:00+05:30',
-  'dateModified': '2024-06-12T09:00:00+05:30'
+  'datePublished': '2024-06-13T09:00:00+05:30',
+  'dateModified': '2024-06-13T09:00:00+05:30'
 };
 
 
@@ -75,16 +75,18 @@ export default function BlogPost() {
             <h1 className="font-headline text-4xl md:text-5xl font-bold mb-8 leading-relaxed">
               Dropped Pin का उपयोग करके पिन कैसे गिराएं?
             </h1>
-            <p className="mt-2 text-muted-foreground">12 जून, 2024</p>
-            <div className="mt-4 flex items-center gap-3">
-              <Avatar>
-                <AvatarImage src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZS4ZrAplYEXP1MEzjBt1GJQRFz75AM34nlUAl1XUmzUfsYLwFaUdLR-JZokbK-G_ADcMdlSS6eI2VSZ7kDz3SiNl2EFRGSO1okkD9wKoG-9MPOk229YNXCCT5AnyLazE6h4WIEzhRyv9rZQD-BdZNxHdfFssI3xQFfqE9ggnCQUXolA8LyE30ejvAmUoO/s1600/cropped-kgoljdakjodfjkpo-1-144x48.png" alt="Dropped Pin Logo" />
-                <AvatarFallback>DP</AvatarFallback>
-              </Avatar>
-              <div className="flex items-center gap-1">
-                <span className="font-semibold">Dropped Pin</span>
-                <CheckCircle className="h-5 w-5 text-blue-500" fill="currentColor" />
+            <div className="mt-4 flex items-center gap-4">
+              <div className="flex items-center gap-3">
+                <Avatar>
+                  <AvatarImage src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZS4ZrAplYEXP1MEzjBt1GJQRFz75AM34nlUAl1XUmzUfsYLwFaUdLR-JZokbK-G_ADcMdlSS6eI2VSZ7kDz3SiNl2EFRGSO1okkD9wKoG-9MPOk229YNXCCT5AnyLazE6h4WIEzhRyv9rZQD-BdZNxHdfFssI3xQFfqE9ggnCQUXolA8LyE30ejvAmUoO/s1600/cropped-kgoljdakjodfjkpo-1-144x48.png" alt="Dropped Pin Logo" />
+                  <AvatarFallback>DP</AvatarFallback>
+                </Avatar>
+                <div className="flex items-center gap-1">
+                  <span className="font-semibold">Dropped Pin</span>
+                  <CheckCircle className="h-5 w-5 text-blue-500" fill="currentColor" />
+                </div>
               </div>
+               <p className="text-sm text-muted-foreground">13 जून, 2024</p>
             </div>
           </div>
 

@@ -21,7 +21,7 @@ const blogPosts = [
       'Dropped Pin का उपयोग करके किसी भी स्थान पर पिन कैसे छोड़ें, tọa표 कैसे प्राप्त करें, और उसे कैसे साझा करें, इस पर एक विस्तृत गाइड।',
     image: placeholderImages[4],
     tags: ['Guide', 'How-To', 'Hindi'],
-    date: 'June 12, 2024',
+    date: 'June 13, 2024',
   },
   {
     title: 'The Ultimate Guide to Finding Your Way with Dropped Pin',
@@ -64,8 +64,8 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <main className="container mx-auto px-4 py-8">
-      <div className="mb-12">
-        <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">
+      <div className="mb-12 text-left">
+        <h1 className="font-headline text-4xl md:text-5xl font-bold">
           Dropped Pin Blog
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl">
