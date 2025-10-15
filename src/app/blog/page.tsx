@@ -21,7 +21,7 @@ const blogPosts = [
       'Dropped Pin का उपयोग करके किसी भी स्थान पर पिन कैसे छोड़ें, tọa표 कैसे प्राप्त करें, और उसे कैसे साझा करें, इस पर एक विस्तृत गाइड।',
     image: placeholderImages[4],
     tags: ['Guide', 'How-To', 'Hindi'],
-    date: 'June 14, 2024',
+    date: 'October 15, 2025',
   },
   {
     title: 'The Ultimate Guide to Finding Your Way with Dropped Pin',
