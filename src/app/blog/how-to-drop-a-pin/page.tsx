@@ -72,7 +72,7 @@ export default function BlogPost() {
       <main className="container mx-auto px-4 py-8">
         <article className="prose max-w-4xl mx-auto">
           <div className="mb-8">
-            <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">
+            <h1 className="font-headline text-4xl md:text-5xl font-bold">
               Dropped Pin का उपयोग करके पिन कैसे गिराएं?
             </h1>
             <p className="mt-2 text-muted-foreground">12 जून, 2024</p>
