@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useRef, useEffect } from 'react';
@@ -15,7 +16,7 @@ import {
 import QRCode from 'qrcode';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import {
   Dialog,
@@ -232,6 +233,9 @@ export default function LocationPicker() {
         <CardTitle className="font-headline text-3xl md:text-4xl text-primary">
           Dropped Pin
         </CardTitle>
+        <CardDescription className="!mt-2">
+         📍Just Click On The Map – Get Location, Copy, And Share!📍
+        </CardDescription>
       </CardHeader>
       <CardContent>
         {apiKeyMissing ? (
