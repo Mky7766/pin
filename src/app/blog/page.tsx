@@ -21,7 +21,7 @@ const blogPosts = [
       'जानें कि Dropped Pin टूल का उपयोग करके किसी भी मैप लोकेशन का QR कोड कैसे बनाएं। यह आसान है और इसे व्हाट्सएप, ईमेल या कहीं भी साझा किया जा सकता है।',
     image: placeholderImages[1],
     tags: ['QR Code', 'How-To', 'Hindi', 'Location'],
-    date: 'October 20, 2025',
+    date: 'October 15, 2025',
   },
   {
     title: 'गिराया हुआ पिन (Dropped Pin) कैसे भेजें: एक पूरी गाइड',
@@ -30,7 +30,7 @@ const blogPosts = [
       'जानें कि Dropped Pin टूल से ड्रॉप किए गए पिन को व्हाट्सएप, ईमेल या लिंक के माध्यम से कैसे भेजें। सटीक लोकेशन साझा करने के लिए यह एक विस्तृत गाइड है।',
     image: placeholderImages[6],
     tags: ['How-To', 'Google Maps', 'Hindi', 'Share'],
-    date: 'October 19, 2025',
+    date: 'October 15, 2025',
   },
   {
     title: 'Android पर पिन कैसे गिराएं: एक स्टेप-बाय-स्टेप गाइड',
@@ -39,7 +39,7 @@ const blogPosts = [
       'अपने Android डिवाइस पर Google Maps में पिन कैसे गिराएं, यह जानें। इस गाइड में निर्देशांक ढूंढना, लोकेशन साझा करना और बहुत कुछ शामिल है।',
     image: placeholderImages[5],
     tags: ['Android', 'How-To', 'Google Maps', 'Hindi'],
-    date: 'October 18, 2025',
+    date: 'October 15, 2025',
   },
   {
     title: 'Dropped Pin का उपयोग करके पिन कैसे गिराएं?',
@@ -57,7 +57,7 @@ const blogPosts = [
       'Google Maps पर पिन कैसे गिराएं, निर्देशांक कैसे प्राप्त करें, स्थानों को कैसे सहेजें और उन्हें किसी के भी साथ, कहीं भी साझा करने के बारे में एक विस्तृत गाइड।',
     image: placeholderImages[0],
     tags: ['Guide', 'How-To', 'Google Maps', 'Hindi'],
-    date: 'October 16, 2025',
+    date: 'October 15, 2025',
   },
   {
     title: 'Top 5 Hidden Features of Dropped Pin You Should Know',

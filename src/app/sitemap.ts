@@ -10,19 +10,19 @@ async function getDynamicRoutes() {
     },
     {
       slug: 'how-to-drop-a-pin-on-google-maps',
-      updatedAt: '2025-10-16T09:00:00+05:30',
+      updatedAt: '2025-10-15T09:00:00+05:30',
     },
     {
       slug: 'how-to-drop-a-pin-on-android-hindi',
-      updatedAt: '2025-10-18T09:00:00+05:30',
+      updatedAt: '2025-10-15T09:00:00+05:30',
     },
     {
       slug: 'how-to-send-a-dropped-pin-hindi',
-      updatedAt: '2025-10-19T09:00:00+05:30',
+      updatedAt: '2025-10-15T09:00:00+05:30',
     },
     {
       slug: 'location-ka-qr-code-kaise-banayen',
-      updatedAt: '2025-10-20T09:00:00+05:30',
+      updatedAt: '2025-10-15T09:00:00+05:30',
     },
   ];
 
