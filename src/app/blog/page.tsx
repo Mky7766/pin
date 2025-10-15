@@ -15,6 +15,15 @@ import { placeholderImages } from '@/lib/placeholder-images';
 
 const blogPosts = [
   {
+    title: 'How to Drop a Pin on Google Maps',
+    slug: '/blog/how-to-drop-a-pin-on-google-maps',
+    description:
+      'A step-by-step guide on how to drop a pin on Google Maps to get coordinates, save locations, and share them with anyone, anywhere.',
+    image: placeholderImages[0],
+    tags: ['Guide', 'How-To', 'Google Maps'],
+    date: 'October 16, 2025',
+  },
+  {
     title: 'How to Drop a Pin?',
     slug: '/blog/how-to-drop-a-pin',
     description:
@@ -22,15 +31,6 @@ const blogPosts = [
     image: placeholderImages[4],
     tags: ['Guide', 'How-To', 'Hindi'],
     date: 'October 15, 2025',
-  },
-  {
-    title: 'The Ultimate Guide to Finding Your Way with Dropped Pin',
-    slug: '#',
-    description:
-      'Learn how to use Dropped Pin to save, share, and navigate to any location with pinpoint accuracy. This guide covers all the features.',
-    image: placeholderImages[0],
-    tags: ['Guide', 'How-To'],
-    date: 'June 10, 2024',
   },
   {
     title: 'Top 5 Hidden Features of Dropped Pin You Should Know',

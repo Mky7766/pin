@@ -8,6 +8,10 @@ async function getDynamicRoutes() {
       slug: 'how-to-drop-a-pin',
       updatedAt: '2025-10-15T09:00:00+05:30',
     },
+    {
+      slug: 'how-to-drop-a-pin-on-google-maps',
+      updatedAt: '2025-10-16T09:00:00+05:30',
+    },
   ];
 
   return posts.map((post) => ({
