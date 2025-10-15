@@ -10,6 +10,7 @@ import { AuthorBio } from '@/components/blog/author-bio';
 const pageTitle = "Google Maps पर पिन कैसे गिराएं - Dropped Pin Finder";
 const pageDescription = "Google Maps पर पिन कैसे गिराएं, निर्देशांक कैसे प्राप्त करें, स्थानों को कैसे सहेजें और उन्हें किसी के भी साथ, कहीं भी साझा करने के बारे में एक विस्तृत गाइड।";
 const pageUrl = "https://www.droppedpin.xyz/blog/how-to-drop-a-pin-on-google-maps";
+const featureImage = placeholderImages.find(p => p.id === '1');
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -21,10 +22,10 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1528732204793-863d59a10a31?q=80&w=600&h=400',
+        url: featureImage!.imageUrl,
         width: 600,
         height: 400,
-        alt: "एक व्यक्ति जिसके हाथ में फोन है और उसमें मैप एप्लीकेशन खुली हुई है।",
+        alt: "A cityscape with multiple red map pins.",
       },
     ],
   },
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: ['https://images.unsplash.com/photo-1528732204793-863d59a10a31?q=80&w=600&h=400'],
+    images: [featureImage!.imageUrl],
   },
 };
 
@@ -45,7 +46,7 @@ const jsonLd = {
   },
   'headline': pageTitle,
   'description': pageDescription,
-  'image': 'https://images.unsplash.com/photo-1528732204793-863d59a10a31?q=80&w=600&h=400',
+  'image': featureImage!.imageUrl,
   'author': {
     '@type': 'Organization',
     'name': 'Dropped Pin',
@@ -87,6 +88,9 @@ const VerifiedIcon = () => (
 
 
 export default function BlogPost() {
+  if (!featureImage) {
+    return null;
+  }
   return (
     <>
       <script
@@ -116,11 +120,11 @@ export default function BlogPost() {
 
           <div className="relative h-80 w-full mb-8 rounded-lg overflow-hidden shadow-lg">
             <Image
-              src={'https://images.unsplash.com/photo-1528732204793-863d59a10a31?q=80&w=600&h=400'}
-              alt="एक व्यक्ति जिसके हाथ में फोन है और उसमें मैप एप्लीकेशन खुली हुई है।"
+              src={featureImage.imageUrl}
+              alt="A cityscape with multiple red map pins."
               fill
               className="object-cover"
-              data-ai-hint={'map phone'}
+              data-ai-hint={featureImage.imageHint}
             />
           </div>
 

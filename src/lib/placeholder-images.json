@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "1",
-      "description": "A person holding a phone with a map application open.",
-      "imageUrl": "https://images.unsplash.com/photo-1528732204793-863d59a10a31?q=80&w=600&h=400",
-      "imageHint": "map phone"
+      "description": "A cityscape with multiple red map pins.",
+      "imageUrl": "https://images.unsplash.com/photo-1593941707882-6e48a1b4a3de?q=80&w=600&h=400",
+      "imageHint": "city map pins"
     },
     {
       "id": "2",
