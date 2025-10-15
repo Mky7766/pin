@@ -29,6 +29,7 @@ import Image from 'next/image';
 declare global {
   interface Window {
     google: any;
+    mapScriptLoaded: boolean;
   }
 }
 
@@ -57,26 +58,29 @@ export default function LocationPicker() {
     }
 
     if (window.google && window.google.maps) {
-      initializeMap();
+      setIsApiReady(true);
+      return;
+    }
+    
+    if (window.mapScriptLoaded) {
+      const interval = setInterval(() => {
+        if (window.google && window.google.maps) {
+          setIsApiReady(true);
+          clearInterval(interval);
+        }
+      }, 100);
       return;
     }
 
+    window.mapScriptLoaded = true;
     const script = document.createElement('script');
+    script.id = 'google-maps-script';
     script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
     script.async = true;
     script.defer = true;
     script.onload = () => setIsApiReady(true);
     document.head.appendChild(script);
 
-    return () => {
-      // Clean up the script tag if the component is unmounted
-      const scripts = document.head.getElementsByTagName('script');
-      for (let i = 0; i < scripts.length; i++) {
-        if (scripts[i].src.includes('maps.googleapis.com')) {
-          document.head.removeChild(scripts[i]);
-        }
-      }
-    };
   }, []);
 
   useEffect(() => {
@@ -86,7 +90,7 @@ export default function LocationPicker() {
   }, [isApiReady]);
 
   const initializeMap = () => {
-    if (!mapRef.current || !window.google) return;
+    if (!mapRef.current || !window.google || mapInstance.current) return;
 
     const jaipur = { lat: 26.9124, lng: 75.7873 };
     mapInstance.current = new window.google.maps.Map(mapRef.current, {
