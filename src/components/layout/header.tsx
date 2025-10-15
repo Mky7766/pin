@@ -34,7 +34,7 @@ export function Header() {
             <Link href="/">Home</Link>
           </Button>
           <Button variant="ghost" asChild>
-            <Link href="/blog">New Pin</Link>
+            <Link href="/blog">Blog</Link>
           </Button>
           <Button variant="ghost" asChild>
             <Link href="/about">About Us</Link>
@@ -70,7 +70,7 @@ export function Header() {
                     className="justify-start text-lg"
                     asChild
                   >
-                    <Link href="/blog">New Pin</Link>
+                    <Link href="/blog">Blog</Link>
                   </Button>
                 </SheetClose>
                 <SheetClose asChild>
