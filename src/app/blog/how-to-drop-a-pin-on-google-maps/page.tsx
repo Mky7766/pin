@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: placeholderImages[0].imageUrl,
+        url: 'https://images.unsplash.com/photo-1528732204793-863d59a10a31?q=80&w=600&h=400',
         width: 600,
         height: 400,
         alt: "एक व्यक्ति जिसके हाथ में फोन है और उसमें मैप एप्लीकेशन खुली हुई है।",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: [placeholderImages[0].imageUrl],
+    images: ['https://images.unsplash.com/photo-1528732204793-863d59a10a31?q=80&w=600&h=400'],
   },
 };
 
@@ -45,7 +45,7 @@ const jsonLd = {
   },
   'headline': pageTitle,
   'description': pageDescription,
-  'image': placeholderImages[0].imageUrl,
+  'image': 'https://images.unsplash.com/photo-1528732204793-863d59a10a31?q=80&w=600&h=400',
   'author': {
     '@type': 'Organization',
     'name': 'Dropped Pin',
@@ -116,11 +116,11 @@ export default function BlogPost() {
 
           <div className="relative h-80 w-full mb-8 rounded-lg overflow-hidden shadow-lg">
             <Image
-              src={placeholderImages[0].imageUrl}
+              src={'https://images.unsplash.com/photo-1528732204793-863d59a10a31?q=80&w=600&h=400'}
               alt="एक व्यक्ति जिसके हाथ में फोन है और उसमें मैप एप्लीकेशन खुली हुई है।"
               fill
               className="object-cover"
-              data-ai-hint={placeholderImages[0].imageHint}
+              data-ai-hint={'map phone'}
             />
           </div>
 
