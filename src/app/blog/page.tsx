@@ -15,6 +15,15 @@ import { placeholderImages } from '@/lib/placeholder-images';
 
 const blogPosts = [
   {
+    title: 'Android पर पिन कैसे गिराएं: एक स्टेप-बाय-स्टेप गाइड',
+    slug: '/blog/how-to-drop-a-pin-on-android-hindi',
+    description:
+      'अपने Android डिवाइस पर Google Maps में पिन कैसे गिराएं, यह जानें। इस गाइड में निर्देशांक ढूंढना, लोकेशन साझा करना और बहुत कुछ शामिल है।',
+    image: placeholderImages[5],
+    tags: ['Android', 'How-To', 'Google Maps', 'Hindi'],
+    date: 'October 18, 2025',
+  },
+  {
     title: 'How to Drop a Pin on Android: A Step-by-Step Guide',
     slug: '/blog/how-to-drop-a-pin-on-android',
     description:
