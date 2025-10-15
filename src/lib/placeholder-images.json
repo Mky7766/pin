@@ -35,6 +35,12 @@
       "description": "A person holding an Android phone with a map application open.",
       "imageUrl": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiQzMVVbHiA1FinrnCb_5ppSFhImvhUHYGyG9Kd2DcZhnO1iWxW3ffvH2jgJHZJyCXPlZ2VQ7BeXqLZFaitzDy2DxXIH3yYgFMvHVBa7AMdV_42bItXxRTLmzk68aK5RszEh0W7wCPVistSM9b3iLSyJxxvRKWZ2NCaswXlcZwwvPduiCzmSBYyM2r5TI3q/s3000/4511068.jpg",
       "imageHint": "android map"
+    },
+    {
+      "id": "7",
+      "description": "A phone screen showing a map location being shared via messaging app.",
+      "imageUrl": "https://picsum.photos/seed/7/600/400",
+      "imageHint": "sharing location"
     }
   ]
 }

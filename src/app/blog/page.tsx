@@ -15,6 +15,15 @@ import { placeholderImages } from '@/lib/placeholder-images';
 
 const blogPosts = [
   {
+    title: 'गिराया हुआ पिन (Dropped Pin) कैसे भेजें: एक पूरी गाइड',
+    slug: '/blog/how-to-send-a-dropped-pin-hindi',
+    description:
+      'जानें कि Google Maps से ड्रॉप किए गए पिन को व्हाट्सएप, ईमेल या लिंक के माध्यम से कैसे भेजें। सटीक लोकेशन साझा करने के लिए यह एक विस्तृत गाइड है।',
+    image: placeholderImages[6],
+    tags: ['How-To', 'Google Maps', 'Hindi', 'Share'],
+    date: 'October 19, 2025',
+  },
+  {
     title: 'Android पर पिन कैसे गिराएं: एक स्टेप-बाय-स्टेप गाइड',
     slug: '/blog/how-to-drop-a-pin-on-android-hindi',
     description:

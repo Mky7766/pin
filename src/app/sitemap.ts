@@ -16,6 +16,10 @@ async function getDynamicRoutes() {
       slug: 'how-to-drop-a-pin-on-android-hindi',
       updatedAt: '2025-10-18T09:00:00+05:30',
     },
+    {
+      slug: 'how-to-send-a-dropped-pin-hindi',
+      updatedAt: '2025-10-19T09:00:00+05:30',
+    },
   ];
 
   return posts.map((post) => ({
