@@ -15,7 +15,17 @@ import { placeholderImages } from '@/lib/placeholder-images';
 
 const blogPosts = [
   {
+    title: 'How to Drop a Pin?',
+    slug: '/blog/how-to-drop-a-pin',
+    description:
+      'Dropped Pin का उपयोग करके किसी भी स्थान पर पिन कैसे छोड़ें, tọa표 कैसे प्राप्त करें, और उसे कैसे साझा करें, इस पर एक विस्तृत गाइड।',
+    image: placeholderImages[4],
+    tags: ['Guide', 'How-To', 'Hindi'],
+    date: 'June 12, 2024',
+  },
+  {
     title: 'The Ultimate Guide to Finding Your Way with Dropped Pin',
+    slug: '#',
     description:
       'Learn how to use Dropped Pin to save, share, and navigate to any location with pinpoint accuracy. This guide covers all the features.',
     image: placeholderImages[0],
@@ -24,14 +34,16 @@ const blogPosts = [
   },
   {
     title: 'Top 5 Hidden Features of Dropped Pin You Should Know',
+    slug: '#',
     description:
-      "Did you know you can generate QR codes for locations? Discover five powerful features that will change the way you use Dropped Pin.",
+      'Did you know you can generate QR codes for locations? Discover five powerful features that will change the way you use Dropped Pin.',
     image: placeholderImages[1],
     tags: ['Features', 'Tips'],
     date: 'June 8, 2024',
   },
   {
     title: 'How Dropped Pin is Helping Businesses Streamline Operations',
+    slug: '#',
     description:
       'From delivery services to event planning, businesses are using Dropped Pin to improve logistics and communication. Find out how.',
     image: placeholderImages[2],
@@ -40,6 +52,7 @@ const blogPosts = [
   },
   {
     title: 'A Traveler’s Best Friend: Why Dropped Pin is a Must-Have App',
+    slug: '#',
     description:
       'Never get lost again. See how travelers are using Dropped Pin to mark hotels, attractions, and meeting points on their journeys.',
     image: placeholderImages[3],
@@ -67,7 +80,7 @@ export default function BlogPage() {
             className="flex flex-col overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <CardHeader className="p-0">
-              <Link href="#">
+              <Link href={post.slug}>
                 <div className="relative h-48 w-full">
                   <Image
                     src={post.image.imageUrl}
@@ -89,7 +102,7 @@ export default function BlogPage() {
                   ))}
                 </div>
                 <CardTitle className="text-xl font-bold line-clamp-2">
-                  <Link href="#" className="hover:text-primary transition-colors">
+                  <Link href={post.slug} className="hover:text-primary transition-colors">
                     {post.title}
                   </Link>
                 </CardTitle>

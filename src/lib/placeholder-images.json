@@ -23,6 +23,12 @@
       "description": "A backpacker looking at a map in a scenic mountain landscape.",
       "imageUrl": "https://picsum.photos/seed/4/600/400",
       "imageHint": "traveler map"
+    },
+    {
+      "id": "5",
+      "description": "A detailed step-by-step visual guide on a map.",
+      "imageUrl": "https://picsum.photos/seed/5/600/400",
+      "imageHint": "guide map"
     }
   ]
 }
