@@ -44,7 +44,7 @@ export default function DisclaimerPage() {
         </h2>
         <p className="mb-6">
           If you have any questions regarding this disclaimer, please feel free
-          to contact us at&nbsp;
+          to contact us.
         </p>
       </div>
     </main>

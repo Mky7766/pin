@@ -1,4 +1,3 @@
-
 export default function TermsAndConditionsPage() {
   return (
     <main className="container mx-auto px-4 py-8">
@@ -76,7 +75,7 @@ export default function TermsAndConditionsPage() {
         </h2>
         <p className="mb-6">
           For any questions regarding these Terms and Conditions, please
-          contact us at
+          contact us.
         </p>
       </div>
     </main>

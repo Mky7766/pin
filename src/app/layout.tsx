@@ -5,8 +5,9 @@ import { Footer } from '@/components/layout/footer';
 import './globals.css';
 
 const siteConfig = {
-  name: 'Dropped Pin',
-  description: 'Share your location with a simple dropped pin.',
+  name: 'Dropped Pin Finder - Free Online Tool to Find Coordinates',
+  description:
+    'DroppedPin.xyz is a free online tool to find and share exact location coordinates from a dropped pin on Google Maps. Get latitude and longitude instantly.',
   url: 'https://www.droppedpin.xyz',
   ogImage:
     'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_Pb2UOmU5QryscCr-gz2XzgvK3uhhfSbF3rfqUpVs7VQEcJh6kBU6FJbMhb9IJClqK1vej4iURwrRt4xPMmSfSiub2EdZnE-JTojkCxwvGmGyiSHbwLnLqQtw-9U30ojK5lV5b7egz0NaLt1kaswvaNvY0S3XHj6k1Tpzsu2KEJyryh07XDRPxmyChkCF/s320/cropped-654798098.png',
@@ -45,6 +46,28 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Dropped Pin Finder',
+  url: 'https://www.droppedpin.xyz',
+  applicationCategory: 'Tool',
+  operatingSystem: 'Any',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  description: siteConfig.description,
+  inLanguage: 'en-US',
+  creator: {
+    '@type': 'Organization',
+    name: 'Dropped Pin',
+    url: 'https://www.droppedpin.xyz',
+  },
+};
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -53,6 +76,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
