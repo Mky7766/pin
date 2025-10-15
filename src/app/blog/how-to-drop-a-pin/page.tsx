@@ -71,12 +71,12 @@ export default function BlogPost() {
       />
       <main className="container mx-auto px-4 py-8">
         <article className="prose max-w-4xl mx-auto">
-          <div className="text-center mb-8">
+          <div className="mb-8">
             <h1 className="font-headline text-4xl md:text-5xl font-bold tracking-tight">
               Dropped Pin का उपयोग करके पिन कैसे गिराएं?
             </h1>
             <p className="mt-2 text-muted-foreground">12 जून, 2024</p>
-            <div className="mt-4 flex justify-center items-center gap-3">
+            <div className="mt-4 flex items-center gap-3">
               <Avatar>
                 <AvatarImage src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZS4ZrAplYEXP1MEzjBt1GJQRFz75AM34nlUAl1XUmzUfsYLwFaUdLR-JZokbK-G_ADcMdlSS6eI2VSZ7kDz3SiNl2EFRGSO1okkD9wKoG-9MPOk229YNXCCT5AnyLazE6h4WIEzhRyv9rZQD-BdZNxHdfFssI3xQFfqE9ggnCQUXolA8LyE30ejvAmUoO/s1600/cropped-kgoljdakjodfjkpo-1-144x48.png" alt="Dropped Pin Logo" />
                 <AvatarFallback>DP</AvatarFallback>
