@@ -1,3 +1,7 @@
+import Image from 'next/image';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+
+
 export default function AboutPage() {
   return (
     <main className="container mx-auto px-4 py-8">
@@ -15,6 +19,18 @@ export default function AboutPage() {
         <p className="mb-6">
           Whether you’re using it for personal navigation, business logistics, or sharing location with friends and family – Dropped Pin is here to help. 🎯
         </p>
+
+        <div className="mt-16 not-prose">
+          <h3 className="font-headline text-2xl font-bold mb-6 text-center">Meet the Founder</h3>
+          <div className="flex flex-col items-center text-center">
+            <Avatar className="h-24 w-24 mb-4">
+              <AvatarImage src="https://picsum.photos/seed/founder/200/200" alt="Mukesh Kumar Yogi" />
+              <AvatarFallback>MK</AvatarFallback>
+            </Avatar>
+            <h4 className="text-xl font-bold">Mukesh Kumar Yogi</h4>
+            <p className="text-muted-foreground">Founder of Dropped Pin</p>
+          </div>
+        </div>
       </div>
     </main>
   );
