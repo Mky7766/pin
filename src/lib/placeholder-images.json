@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "1",
+      "description": "A person holding a phone with a map application open.",
+      "imageUrl": "https://picsum.photos/seed/1/600/400",
+      "imageHint": "map phone"
+    },
+    {
+      "id": "2",
+      "description": "A close-up of a QR code on a digital screen.",
+      "imageUrl": "https://picsum.photos/seed/2/600/400",
+      "imageHint": "qr code"
+    },
+    {
+      "id": "3",
+      "description": "A delivery driver handing a package to a customer.",
+      "imageUrl": "https://picsum.photos/seed/3/600/400",
+      "imageHint": "delivery package"
+    },
+    {
+      "id": "4",
+      "description": "A backpacker looking at a map in a scenic mountain landscape.",
+      "imageUrl": "https://picsum.photos/seed/4/600/400",
+      "imageHint": "traveler map"
+    }
+  ]
 }
