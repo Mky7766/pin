@@ -2,6 +2,8 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { placeholderImages } from '@/lib/placeholder-images';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { CheckCircle } from 'lucide-react';
 
 const pageTitle = "How to Drop a Pin? - Dropped Pin Finder";
 const pageDescription = "Dropped Pin का उपयोग करके किसी भी स्थान पर पिन कैसे छोड़ें, tọa표 कैसे प्राप्त करें, और उसे कैसे साझा करें, इस पर एक विस्तृत गाइड।";
@@ -74,6 +76,16 @@ export default function BlogPost() {
               Dropped Pin का उपयोग करके पिन कैसे गिराएं?
             </h1>
             <p className="mt-2 text-muted-foreground">12 जून, 2024</p>
+            <div className="mt-4 flex justify-center items-center gap-3">
+              <Avatar>
+                <AvatarImage src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZS4ZrAplYEXP1MEzjBt1GJQRFz75AM34nlUAl1XUmzUfsYLwFaUdLR-JZokbK-G_ADcMdlSS6eI2VSZ7kDz3SiNl2EFRGSO1okkD9wKoG-9MPOk229YNXCCT5AnyLazE6h4WIEzhRyv9rZQD-BdZNxHdfFssI3xQFfqE9ggnCQUXolA8LyE30ejvAmUoO/s1600/cropped-kgoljdakjodfjkpo-1-144x48.png" alt="Dropped Pin Logo" />
+                <AvatarFallback>DP</AvatarFallback>
+              </Avatar>
+              <div className="flex items-center gap-1">
+                <span className="font-semibold">Dropped Pin</span>
+                <CheckCircle className="h-5 w-5 text-blue-500" fill="currentColor" />
+              </div>
+            </div>
           </div>
 
           <div className="relative h-80 w-full mb-8 rounded-lg overflow-hidden shadow-lg">
