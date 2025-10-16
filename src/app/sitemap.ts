@@ -4,7 +4,7 @@ import { MetadataRoute } from 'next';
 const baseUrl = 'https://droppedpin.xyz';
 
 async function getDynamicRoutes(): Promise<MetadataRoute.Sitemap> {
-  const posts = [
+  const posts: {slug: string, changeFrequency: 'yearly' | 'monthly' | 'daily'}[] = [
     {
       slug: 'how-to-drop-a-pin',
       changeFrequency: 'yearly',
@@ -45,7 +45,7 @@ async function getDynamicRoutes(): Promise<MetadataRoute.Sitemap> {
 
   return posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    changeFrequency: post.changeFrequency as 'daily' | 'yearly' | 'monthly',
+    changeFrequency: post.changeFrequency,
   }));
 }
 
