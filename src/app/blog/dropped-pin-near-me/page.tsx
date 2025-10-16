@@ -113,8 +113,8 @@ const blogLd = {
       'url': 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj_Pb2UOmU5QryscCr-gz2XzgvK3uhhfSbF3rfqUpVs7VQEcJh6kBU6FJbMhb9IJClqK1vej4iURwrRt4xPMmSfSiub2EdZnE-JTojkCxwvGmGyiSHbwLnLqQtw-9U30ojK5lV5b7egz0NaLt1kaswvaNvY0S3XHj6k1Tpzsu2KEJyryh07XDRPxmyChkCF/s320/cropped-654798098.png'
     }
   },
-  'datePublished': '2025-10-18T09:00:00+05:30',
-  'dateModified': '2025-10-18T09:00:00+05:30'
+  'datePublished': '2025-10-16T09:00:00+05:30',
+  'dateModified': '2025-10-16T09:00:00+05:30'
 };
 
 const VerifiedIcon = () => (
@@ -172,7 +172,7 @@ export default function BlogPost() {
                   <VerifiedIcon />
                 </div>
               </div>
-               <p className="text-sm text-muted-foreground">October 18, 2025</p>
+               <p className="text-sm text-muted-foreground">October 16, 2025</p>
             </div>
           </div>
 

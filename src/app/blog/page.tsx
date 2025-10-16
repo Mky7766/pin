@@ -23,7 +23,7 @@ const blogPosts = [
         imageHint: "map top view"
     },
     tags: ['Live Location', 'How-To', 'Hindi', 'Near Me'],
-    date: 'October 18, 2025',
+    date: 'October 16, 2025',
   },
   {
     title: 'Snow Day Calculator',
