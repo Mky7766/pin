@@ -1,3 +1,4 @@
+
 import { Metadata } from 'next';
 import Script from 'next/script';
 import { AuthorBio } from '@/components/blog/author-bio';
@@ -43,7 +44,7 @@ export default function SnowDayCalculatorPage() {
                 Snow Day Calculator
             </h1>
             <p className="lead text-xl">
-                Will it be a snow day? Use the calculator below to find out your chances of a school closure. This tool uses real-time weather data to give you an accurate prediction.
+                Will it be a snow day? The age-old question that students and teachers eagerly ask during winter. Use our free Snow Day Calculator below to find out your chances of a school closure. This tool uses real-time weather data and local information to give you an accurate prediction.
             </p>
         </article>
         
@@ -52,9 +53,38 @@ export default function SnowDayCalculatorPage() {
         </div>
 
         <article className="prose max-w-4xl mx-auto">
-            <h2 className="font-headline text-3xl font-bold mt-12 mb-4">How It Works</h2>
+            <h2 className="font-headline text-3xl font-bold mt-12 mb-4">What is a Snow Day Calculator?</h2>
             <p>
-                Our Snow Day Calculator analyzes various factors, including snowfall predictions, wind chill, and official weather advisories for your specific location. Just enter your details, and the algorithm will calculate the probability of a snow day.
+                A Snow Day Calculator is an online tool designed to predict the probability of your school closing due to winter weather. By analyzing various factors like forecasted snowfall, timing, ice, and temperature, it gives you a percentage chance of having a day off. It's a fun and useful way to anticipate whether you'll be building a snowman or heading to class.
+            </p>
+
+            <h2 className="font-headline text-3xl font-bold mt-12 mb-4">How It Works: The Science Behind the Prediction</h2>
+            <p>
+                Our Snow Day Calculator isn't just a random number generator. It analyzes several key data points to provide a reliable school closure prediction:
+            </p>
+            <ul className="list-disc pl-5 space-y-2">
+                <li><strong>Location Data:</strong> Your ZIP code tells the calculator which weather forecasts and school district policies to consider.</li>
+                <li><strong>Weather Forecasts:</strong> The tool pulls data from reliable weather services, looking at expected snowfall amounts, wind chill, and ice warnings.</li>
+                <li><strong>Timing of Snowfall:</strong> A foot of snow overnight is more likely to cause a closure than a few flurries during the day.</li>
+                <li><strong>Type of School:</strong> Public schools, private schools, and universities often have different thresholds for closing.</li>
+            </ul>
+
+            <h2 className="font-headline text-3xl font-bold mt-12 mb-4">How to Use the Calculator</h2>
+            <p>Using the tool is simple:</p>
+            <ol className="list-decimal pl-5 space-y-2">
+                <li><strong>Enter Your ZIP Code:</strong> This helps us get the most accurate weather forecast for your area.</li>
+                <li><strong>Select Your School Type:</strong> Choose whether your school is public, private, or another type.</li>
+                <li><strong>Hit Calculate:</strong> Let our algorithm do the work! You'll instantly see your percentage chance of a snow day.</li>
+            </ol>
+
+            <blockquote className="border-l-4 border-primary pl-4 py-2 my-8">
+                <p className="text-lg italic">
+                    "This tool is for entertainment and informational purposes. Always check with your local school district for official closure announcements."
+                </p>
+            </blockquote>
+
+            <p>
+                Whether you're a student hoping for a day off, a parent trying to plan ahead, or a teacher curious about your work schedule, our Snow Day Calculator is the perfect tool for you. Check back often as the weather changes!
             </p>
             
             <AuthorBio />
