@@ -6,7 +6,7 @@ import { AuthorBio } from '@/components/blog/author-bio';
 const pageTitle = "Snow Day Calculator ❄ | Accurate School Closure Predictions";
 const pageDescription = "Check your chances of a snow day instantly with our Snow Day Calculator ❄. Get accurate school closure predictions based on your location and weather updates. Fast, reliable & easy to use!";
 const pageUrl = "https://droppedpin.xyz/blog/snow-day-calculator";
-const imageUrl = "https://snowdaycalculator.bajtimes.com/snow-day-calculator.jpg";
+const imageUrl = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgVYyGjeJUC0XO27A0hsAgMkoy-hMc7vgYhEDBrZGtm5yhIsOUrNZPP6fBriw31zMDjzq_Z5NXbSFZZOwOang6Htmmr7sB9AaDdWtEqaOaEJudoRpTzKwMW4-7JbkP6HiEGnOV-QdfyCAdWHK6sgT2p_n9JvcYAHtgC0baVLYwjxOwnJv1A0PQOFtdJjnrI/s320/1760602050.png";
 
 export const metadata: Metadata = {
   title: pageTitle,
