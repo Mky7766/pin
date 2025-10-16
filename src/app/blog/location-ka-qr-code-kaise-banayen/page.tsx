@@ -82,7 +82,7 @@ const faqLd = {
     }
   },{
     "@type": "Question",
-    "name": "क्या यह QR कोड सभी डिवाइस पर काम करेगा?",
+    "name": "क्या यह QR Code सभी डिवाइस पर काम करेगा?",
     "acceptedAnswer": {
       "@type": "Answer",
       "text": "हाँ, यह एक स्टैंडर्ड QR कोड है जिसे कोई भी स्मार्टफोन या टैबलेट स्कैन कर सकता है और लोकेशन को सीधे अपने मैप्स ऐप में खोल सकता है।"
@@ -207,7 +207,7 @@ export default function BlogPost() {
           </p>
             <div className="my-6">
                 <Image
-                  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitMbz3-P5aP6Ey1_6oKDrFVDEf_bYo6YJuQ_4EK3PqGkSow0BY2iP8i__dBz7Zc2hZXNFKLO6Emp0qcgcFEPAcpXTXFj9O0F8wzyAcveE_QWBTwxGueocaRwdeSpbdku4vfoQ8QqURCUoVY18zOM74O0SgKX-DztbbrADfEDWHWlexptJLvb7xPlesm1qy/s320/Screenshot%202025-10-15%20161540.jpg"
+                  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEig5uFqCfUddUU9RHq1mlKQzQq6GCyxRJL4NO98DXkKSNi17iPihiLNO9LapeihfIbJjhc8gcOW3fiGqUNA0cYg_tLbszEzzh0GReX-Ft1DSod5Xz9C5Gy8gWxTz2nUSIrpRm682xZ2qrXUPRY2HGaaQfusBp9SOO-EOwk2rXDlH_14FxpMfGOrNMxtZOwF/s320/1760602700.png"
                   alt="Generate QR code button"
                   width={320}
                   height={100}
