@@ -7,27 +7,27 @@ async function getDynamicRoutes(): Promise<MetadataRoute.Sitemap> {
   const posts: {slug: string, changeFrequency: 'yearly' | 'monthly' | 'daily'}[] = [
     {
       slug: 'how-to-drop-a-pin',
-      changeFrequency: 'yearly',
+      changeFrequency: 'daily',
     },
     {
       slug: 'how-to-drop-a-pin-on-google-maps',
-      changeFrequency: 'yearly',
+      changeFrequency: 'daily',
     },
     {
       slug: 'how-to-drop-a-pin-on-android-hindi',
-      changeFrequency: 'yearly',
+      changeFrequency: 'daily',
     },
     {
       slug: 'how-to-send-a-dropped-pin-hindi',
-      changeFrequency: 'yearly',
+      changeFrequency: 'daily',
     },
     {
       slug: 'location-ka-qr-code-kaise-banayen',
-      changeFrequency: 'yearly',
+      changeFrequency: 'daily',
     },
      {
       slug: 'how-to-drop-a-pin-on-android',
-      changeFrequency: 'yearly',
+      changeFrequency: 'daily',
     },
     {
       slug: 'snow-day-calculator',
@@ -35,11 +35,11 @@ async function getDynamicRoutes(): Promise<MetadataRoute.Sitemap> {
     },
     {
         slug: 'dropped-pin-near-me',
-        changeFrequency: 'monthly',
+        changeFrequency: 'daily',
     },
     {
         slug: 'how-to-drop-a-pin-on-iphone-hindi',
-        changeFrequency: 'yearly',
+        changeFrequency: 'daily',
     }
   ];
 
@@ -61,19 +61,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${baseUrl}/about`,
-      changeFrequency: 'monthly',
+      changeFrequency: 'daily',
     },
     {
       url: `${baseUrl}/disclaimer`,
-      changeFrequency: 'monthly',
+      changeFrequency: 'daily',
     },
     {
       url: `${baseUrl}/privacy-policy`,
-      changeFrequency: 'monthly',
+      changeFrequency: 'daily',
     },
     {
       url: `${baseUrl}/terms-and-conditions`,
-      changeFrequency: 'monthly',
+      changeFrequency: 'daily',
     },
   ];
 
