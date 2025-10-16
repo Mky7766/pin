@@ -36,6 +36,10 @@ async function getDynamicRoutes(): Promise<MetadataRoute.Sitemap> {
     {
         slug: 'dropped-pin-near-me',
         changeFrequency: 'monthly',
+    },
+    {
+        slug: 'how-to-drop-a-pin-on-iphone-hindi',
+        changeFrequency: 'yearly',
     }
   ];
 
@@ -77,5 +81,3 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [...staticRoutes, ...dynamicRoutes];
 }
-
-    
