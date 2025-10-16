@@ -14,7 +14,7 @@ import {
 
 const pageTitle = "किसी भी लोकेशन का QR कोड कैसे बनाएं? - Dropped Pin";
 const pageDescription = "जानें कि Dropped Pin टूल का उपयोग करके किसी भी मैप लोकेशन का QR कोड कैसे बनाएं। यह आसान है और इसे व्हाट्सएप, ईमेल या कहीं भी साझा किया जा सकता है।";
-const pageUrl = "https://www.droppedpin.xyz/blog/location-ka-qr-code-kaise-banayen";
+const pageUrl = "https://droppedpin.xyz/blog/location-ka-qr-code-kaise-banayen";
 const featureImage = placeholderImages.find(p => p.id === '2');
 
 export const metadata: Metadata = {
@@ -49,12 +49,12 @@ const breadcrumbLd = {
     "@type": "ListItem",
     "position": 1,
     "name": "Home",
-    "item": "https://www.droppedpin.xyz"
+    "item": "https://droppedpin.xyz"
   },{
     "@type": "ListItem",
     "position": 2,
     "name": "Blog",
-    "item": "https://www.droppedpin.xyz/blog"
+    "item": "https://droppedpin.xyz/blog"
   },{
     "@type": "ListItem",
     "position": 3,
@@ -103,7 +103,7 @@ const blogLd = {
   'author': {
     '@type': 'Organization',
     'name': 'Dropped Pin',
-    'url': 'https://www.droppedpin.xyz'
+    'url': 'https://droppedpin.xyz'
   },
   'publisher': {
     '@type': 'Organization',
@@ -193,12 +193,12 @@ export default function BlogPost() {
             क्या आप अपनी दुकान का पता, किसी मीटिंग पॉइंट, या अपने घर की लोकेशन किसी को भेजना चाहते हैं, वो भी बिना लंबा-चौड़ा पता टाइप किए? लोकेशन का QR कोड बनाना इसका सबसे स्मार्ट तरीका है। कोई भी बस अपने फ़ोन से कोड स्कैन करेगा और लोकेशन सीधे Google Maps पर खुल जाएगी!
           </p>
           <p>
-            हमारे <a href="https://www.droppedpin.xyz/">Dropped Pin</a> टूल से यह काम सिर्फ़ कुछ सेकंड में हो जाता है। चलिए, मैं आपको बताता हूँ कैसे।
+            हमारे <a href="https://droppedpin.xyz/">Dropped Pin</a> टूल से यह काम सिर्फ़ कुछ सेकंड में हो जाता है। चलिए, मैं आपको बताता हूँ कैसे।
           </p>
 
           <h2 className="font-headline text-3xl font-bold mt-12 mb-4">स्टेप 1: Dropped Pin वेबसाइट पर लोकेशन चुनें</h2>
           <p>
-            सबसे पहले, <a href="https://www.droppedpin.xyz/">Dropped Pin</a> वेबसाइट पर जाएं। आपको एक बड़ा सा नक्शा दिखेगा। अब, नक्शे पर उस जगह पर क्लिक करें जिसका आप QR कोड बनाना चाहते हैं। आप ज़ूम करके या मैप को खींचकर बिल्कुल सही जगह चुन सकते हैं।
+            सबसे पहले, <a href="https://droppedpin.xyz/">Dropped Pin</a> वेबसाइट पर जाएं। आपको एक बड़ा सा नक्शा दिखेगा। अब, नक्शे पर उस जगह पर क्लिक करें जिसका आप QR कोड बनाना चाहते हैं। आप ज़ूम करके या मैप को खींचकर बिल्कुल सही जगह चुन सकते हैं।
           </p>
 
           <h2 className="font-headline text-3xl font-bold mt-12 mb-4">स्टेप 2: 'Generate QR Code' बटन पर क्लिक करें</h2>
@@ -225,7 +225,7 @@ export default function BlogPost() {
           </blockquote>
 
           <p>
-            तो अगली बार जब भी आपको किसी को अपनी लोकेशन भेजनी हो, तो <a href="https://www.droppedpin.xyz/">Dropped Pin</a> का इस्तेमाल करें और आसानी से एक QR कोड बनाकर भेजें।
+            तो अगली बार जब भी आपको किसी को अपनी लोकेशन भेजनी हो, तो <a href="https://droppedpin.xyz/">Dropped Pin</a> का इस्तेमाल करें और आसानी से एक QR कोड बनाकर भेजें।
           </p>
 
           <div className="mt-16">

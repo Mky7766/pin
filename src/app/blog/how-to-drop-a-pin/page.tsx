@@ -9,7 +9,7 @@ import { AuthorBio } from '@/components/blog/author-bio';
 
 const pageTitle = "How to Drop a Pin? - Dropped Pin Finder";
 const pageDescription = "Dropped Pin का उपयोग करके किसी भी स्थान पर पिन कैसे छोड़ें, tọa표 कैसे प्राप्त करें, और उसे कैसे साझा करें, इस पर एक विस्तृत गाइड।";
-const pageUrl = "https://www.droppedpin.xyz/blog/how-to-drop-a-pin";
+const pageUrl = "https://droppedpin.xyz/blog/how-to-drop-a-pin";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -49,7 +49,7 @@ const jsonLd = {
   'author': {
     '@type': 'Organization',
     'name': 'Dropped Pin',
-    'url': 'https://www.droppedpin.xyz'
+    'url': 'https://droppedpin.xyz'
   },
   'publisher': {
     '@type': 'Organization',
@@ -130,7 +130,7 @@ export default function BlogPost() {
 
           <h2 className="font-headline text-3xl font-bold mt-12 mb-4">चरण 1: मानचित्र पर पिन गिराएं</h2>
           <p>
-            सबसे पहले, हमारी वेबसाइट <a href="https://www.droppedpin.xyz">Dropped Pin</a> पर जाएं। आपको एक इंटरेक्टिव मानचित्र दिखाई देगा। जिस स्थान को आप चिह्नित करना चाहते हैं, बस उस पर क्लिक करें। क्लिक करते ही, एक लाल पिन उस स्थान पर गिर जाएगा। आप मानचित्र को ज़ूम इन या ज़ूम आउट करके और उसे खींचकर सटीक स्थान ढूंढ सकते हैं।
+            सबसे पहले, हमारी वेबसाइट <a href="https://droppedpin.xyz">Dropped Pin</a> पर जाएं। आपको एक इंटरेक्टिव मानचित्र दिखाई देगा। जिस स्थान को आप चिह्नित करना चाहते हैं, बस उस पर क्लिक करें। क्लिक करते ही, एक लाल पिन उस स्थान पर गिर जाएगा। आप मानचित्र को ज़ूम इन या ज़ूम आउट करके और उसे खींचकर सटीक स्थान ढूंढ सकते हैं।
           </p>
 
           <h2 className="font-headline text-3xl font-bold mt-12 mb-4">चरण 2: निर्देशांक (Coordinates) कॉपी करें</h2>

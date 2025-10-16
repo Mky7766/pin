@@ -14,7 +14,7 @@ import {
 
 const pageTitle = "Android पर पिन कैसे गिराएं: एक स्टेप-बाय-स्टेप गाइड";
 const pageDescription = "अपने Android डिवाइस पर Google Maps में पिन कैसे गिराएं, यह जानें। इस गाइड में निर्देशांक ढूंढना, लोकेशन साझा करना और बहुत कुछ शामिल है।";
-const pageUrl = "https://www.droppedpin.xyz/blog/how-to-drop-a-pin-on-android-hindi";
+const pageUrl = "https://droppedpin.xyz/blog/how-to-drop-a-pin-on-android-hindi";
 const featureImage = placeholderImages.find(p => p.id === '6');
 
 export const metadata: Metadata = {
@@ -49,12 +49,12 @@ const breadcrumbLd = {
     "@type": "ListItem",
     "position": 1,
     "name": "Home",
-    "item": "https://www.droppedpin.xyz"
+    "item": "https://droppedpin.xyz"
   },{
     "@type": "ListItem",
     "position": 2,
     "name": "Blog",
-    "item": "https://www.droppedpin.xyz/blog"
+    "item": "https://droppedpin.xyz/blog"
   },{
     "@type": "ListItem",
     "position": 3,
@@ -103,7 +103,7 @@ const blogLd = {
   'author': {
     '@type': 'Organization',
     'name': 'Dropped Pin',
-    'url': 'https://www.droppedpin.xyz'
+    'url': 'https://droppedpin.xyz'
   },
   'publisher': {
     '@type': 'Organization',
@@ -230,7 +230,7 @@ export default function BlogPost() {
           </blockquote>
 
           <p>
-            और बस हो गया! अब आप अपने Android डिवाइस पर एक प्रो की तरह लोकेशन ड्रॉप करने, साझा करने और सहेजने के लिए तैयार हैं। और भी तेज़ अनुभव के लिए, सेकंडों में लिंक और क्यूआर कोड उत्पन्न करने के लिए हमारे अपने <a href="https://www.droppedpin.xyz/">Dropped Pin</a> टूल को देखें।
+            और बस हो गया! अब आप अपने Android डिवाइस पर एक प्रो की तरह लोकेशन ड्रॉप करने, साझा करने और सहेजने के लिए तैयार हैं। और भी तेज़ अनुभव के लिए, सेकंडों में लिंक और क्यूआर कोड उत्पन्न करने के लिए हमारे अपने <a href="https://droppedpin.xyz/">Dropped Pin</a> टूल को देखें।
           </p>
 
           <div className="mt-16">

@@ -8,7 +8,7 @@ import { AuthorBio } from '@/components/blog/author-bio';
 
 const pageTitle = "How to Drop a Pin on Android: A Step-by-Step Guide";
 const pageDescription = "Learn how to drop a pin on Google Maps on your Android device. This guide covers finding coordinates, sharing locations, and more.";
-const pageUrl = "https://www.droppedpin.xyz/blog/how-to-drop-a-pin-on-android";
+const pageUrl = "https://droppedpin.xyz/blog/how-to-drop-a-pin-on-android";
 const featureImage = placeholderImages.find(p => p.id === '6');
 
 export const metadata: Metadata = {
@@ -49,7 +49,7 @@ const jsonLd = {
   'author': {
     '@type': 'Organization',
     'name': 'Dropped Pin',
-    'url': 'https://www.droppedpin.xyz'
+    'url': 'https://droppedpin.xyz'
   },
   'publisher': {
     '@type': 'Organization',
@@ -168,7 +168,7 @@ export default function BlogPost() {
           </blockquote>
 
           <p>
-            And that's it! You're now ready to drop, share, and save locations like a pro on your Android device. For an even faster experience, check out our own <a href="https://www.droppedpin.xyz/">Dropped Pin</a> tool to generate links and QR codes in seconds.
+            And that's it! You're now ready to drop, share, and save locations like a pro on your Android device. For an even faster experience, check out our own <a href="https://droppedpin.xyz/">Dropped Pin</a> tool to generate links and QR codes in seconds.
           </p>
 
           <AuthorBio />

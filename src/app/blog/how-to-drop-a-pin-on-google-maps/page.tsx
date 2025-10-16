@@ -9,7 +9,7 @@ import { AuthorBio } from '@/components/blog/author-bio';
 
 const pageTitle = "Google Maps पर पिन कैसे गिराएं - Dropped Pin Finder";
 const pageDescription = "Google Maps पर पिन कैसे गिराएं, निर्देशांक कैसे प्राप्त करें, स्थानों को कैसे सहेजें और उन्हें किसी के भी साथ, कहीं भी साझा करने के बारे में एक विस्तृत गाइड।";
-const pageUrl = "https://www.droppedpin.xyz/blog/how-to-drop-a-pin-on-google-maps";
+const pageUrl = "https://droppedpin.xyz/blog/how-to-drop-a-pin-on-google-maps";
 const featureImage = placeholderImages.find(p => p.id === '1');
 
 export const metadata: Metadata = {
@@ -50,7 +50,7 @@ const jsonLd = {
   'author': {
     '@type': 'Organization',
     'name': 'Dropped Pin',
-    'url': 'https://www.droppedpin.xyz'
+    'url': 'https://droppedpin.xyz'
   },
   'publisher': {
     '@type': 'Organization',
@@ -183,7 +183,7 @@ export default function BlogPost() {
           </p>
           <ul className="list-disc pl-5 space-y-2">
             <li><strong>"Share" बटन का उपयोग करें:</strong> सूचना पैनल में, आपको एक "Share" बटन मिलेगा। इस पर क्लिक करने से कई विकल्प खुलेंगे। आप एक सीधा लिंक कॉपी कर सकते हैं या इसे सीधे लोकप्रिय मैसेजिंग ऐप जैसे व्हाट्सएप, फेसबुक मैसेंजर या ईमेल के माध्यम से साझा कर सकते हैं।</li>
-            <li><strong>निर्देशांक कॉपी करें:</strong> यदि आप कच्चा स्थान डेटा भेजना चाहते हैं, तो बस सूचना पैनल में निर्देशांक पर क्लिक करें। वे स्वचालित रूप से आपके क्लिपबोर्ड पर कॉपी हो जाएंगे। हमारा अपना <a href="https://www.droppedpin.xyz">Dropped Pin</a> टूल इसे और भी आसान बनाता है, जो आपको तुरंत लिंक और QR कोड उत्पन्न करने देता है!</li>
+            <li><strong>निर्देशांक कॉपी करें:</strong> यदि आप कच्चा स्थान डेटा भेजना चाहते हैं, तो बस सूचना पैनल में निर्देशांक पर क्लिक करें। वे स्वचालित रूप से आपके क्लिपबोर्ड पर कॉपी हो जाएंगे। हमारा अपना <a href="https://droppedpin.xyz">Dropped Pin</a> टूल इसे और भी आसान बनाता है, जो आपको तुरंत लिंक और QR कोड उत्पन्न करने देता है!</li>
             <li><strong>स्थान सहेजें:</strong> आप भविष्य में उपयोग के लिए पिन की गई लोकेशन को अपनी सहेजी गई जगहों पर भी जोड़ सकते हैं। बस "Save" बटन पर क्लिक करें और इसे अपनी पसंदीदा, 'Want to go', या कस्टम सूची में जोड़ें।</li>
           </ul>
 

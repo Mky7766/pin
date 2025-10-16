@@ -24,6 +24,10 @@ async function getDynamicRoutes() {
       slug: 'location-ka-qr-code-kaise-banayen',
       updatedAt: '2025-10-15T09:00:00+05:30',
     },
+     {
+      slug: 'how-to-drop-a-pin-on-android',
+      updatedAt: '2025-10-17T09:00:00+05:30',
+    }
   ];
 
   return posts.map((post) => ({
@@ -34,7 +38,7 @@ async function getDynamicRoutes() {
   }));
 }
 
-const baseUrl = 'https://www.droppedpin.xyz';
+const baseUrl = 'https://droppedpin.xyz';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [

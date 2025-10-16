@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
@@ -8,7 +9,7 @@ const siteConfig = {
   name: 'Dropped Pin',
   description:
     'Dropped Pin is a free online tool to find and share exact location coordinates from a dropped pin on Google Maps. Get latitude and longitude instantly.',
-  url: 'https://www.droppedpin.xyz',
+  url: 'https://droppedpin.xyz',
   ogImage:
     'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgZS4ZrAplYEXP1MEzjBt1GJQRFz75AM34nlUAl1XUmzUfsYLwFaUdLR-JZokbK-G_ADcMdlSS6eI2VSZ7kDz3SiNl2EFRGSO1okkD9wKoG-9MPOk229YNXCCT5AnyLazE6h4WIEzhRyv9rZQD-BdZNxHdfFssI3xQFfqE9ggnCQUXolA8LyE30ejvAmUoO/s1600/cropped-kgoljdakjodfjkpo-1-144x48.png',
 };
@@ -52,7 +53,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'Dropped Pin Finder',
-  url: 'https://www.droppedpin.xyz',
+  url: 'https://droppedpin.xyz',
   applicationCategory: 'Tool',
   operatingSystem: 'Any',
   offers: {
@@ -65,7 +66,7 @@ const jsonLd = {
   creator: {
     '@type': 'Organization',
     name: 'Dropped Pin',
-    url: 'https://www.droppedpin.xyz',
+    url: 'https://droppedpin.xyz',
   },
 };
 

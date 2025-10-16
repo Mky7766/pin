@@ -14,7 +14,7 @@ import {
 
 const pageTitle = "गिराया हुआ पिन (Dropped Pin) कैसे भेजें: एक पूरी गाइड";
 const pageDescription = "जानें कि Dropped Pin टूल से ड्रॉप किए गए पिन को व्हाट्सएप, ईमेल या लिंक के माध्यम से कैसे भेजें। सटीक लोकेशन साझा करने के लिए यह एक विस्तृत गाइड है।";
-const pageUrl = "https://www.droppedpin.xyz/blog/how-to-send-a-dropped-pin-hindi";
+const pageUrl = "https://droppedpin.xyz/blog/how-to-send-a-dropped-pin-hindi";
 const featureImage = placeholderImages.find(p => p.id === '7');
 
 export const metadata: Metadata = {
@@ -49,12 +49,12 @@ const breadcrumbLd = {
     "@type": "ListItem",
     "position": 1,
     "name": "Home",
-    "item": "https://www.droppedpin.xyz"
+    "item": "https://droppedpin.xyz"
   },{
     "@type": "ListItem",
     "position": 2,
     "name": "Blog",
-    "item": "https://www.droppedpin.xyz/blog"
+    "item": "https://droppedpin.xyz/blog"
   },{
     "@type": "ListItem",
     "position": 3,
@@ -103,7 +103,7 @@ const blogLd = {
   'author': {
     '@type': 'Organization',
     'name': 'Dropped Pin',
-    'url': 'https://www.droppedpin.xyz'
+    'url': 'https://droppedpin.xyz'
   },
   'publisher': {
     '@type': 'Organization',
@@ -190,12 +190,12 @@ export default function BlogPost() {
           </div>
 
           <p className="lead text-xl">
-            तो, आपने हमारे <a href="https://www.droppedpin.xyz/">Dropped Pin</a> टूल का इस्तेमाल करके अपनी पसंदीदा जगह पर पिन तो लगा दिया, पर अब उसे किसी दोस्त, परिवार वाले को या फिर डिलीवरी एजेंट को कैसे भेजें? चिंता मत कीजिये, मैं आपको बताता हूँ कि यह कितना आसान है। इस गाइड में, मैं आपको सारे स्टेप्स बताऊंगा ताकि आप कुछ ही सेकंड में अपनी लोकेशन शेयर कर सकें।
+            तो, आपने हमारे <a href="https://droppedpin.xyz/">Dropped Pin</a> टूल का इस्तेमाल करके अपनी पसंदीदा जगह पर पिन तो लगा दिया, पर अब उसे किसी दोस्त, परिवार वाले को या फिर डिलीवरी एजेंट को कैसे भेजें? चिंता मत कीजिये, मैं आपको बताता हूँ कि यह कितना आसान है। इस गाइड में, मैं आपको सारे स्टेप्स बताऊंगा ताकि आप कुछ ही सेकंड में अपनी लोकेशन शेयर कर सकें।
           </p>
 
           <h2 className="font-headline text-3xl font-bold mt-12 mb-4">स्टेप 1: Dropped Pin पर पिन गिराएं</h2>
           <p>
-            सबसे पहले, हमारी वेबसाइट <a href="https://www.droppedpin.xyz/">Dropped Pin</a> पर जाएं। आपको एक नक्शा दिखेगा। बस उस जगह पर क्लिक करें जहाँ आप पिन गिराना चाहते हैं। क्लिक करते ही, आपको नीचे लोकेशन के कोऑर्डिनेट्स (latitude and longitude) और शेयर करने के बटन दिख जाएंगे। बस, यही पैनल आपकी लोकेशन को शेयर करने का जादू का पिटारा है।
+            सबसे पहले, हमारी वेबसाइट <a href="https://droppedpin.xyz/">Dropped Pin</a> पर जाएं। आपको एक नक्शा दिखेगा। बस उस जगह पर क्लिक करें जहाँ आप पिन गिराना चाहते हैं। क्लिक करते ही, आपको नीचे लोकेशन के कोऑर्डिनेट्स (latitude and longitude) और शेयर करने के बटन दिख जाएंगे। बस, यही पैनल आपकी लोकेशन को शेयर करने का जादू का पिटारा है।
           </p>
 
           <h2 className="font-headline text-3xl font-bold mt-12 mb-4">स्टेप 2: शेयर बटन का इस्तेमाल करें</h2>
@@ -216,7 +216,7 @@ export default function BlogPost() {
 
           <h2 className="font-headline text-3xl font-bold mt-12 mb-4">Dropped Pin टूल ही क्यों?</h2>
             <p>
-              आप सोच रहे होंगे कि सीधे गूगल मैप्स से क्यों न शेयर करें? हमारा <a href="https://www.droppedpin.xyz/">Dropped Pin</a> टूल इस काम को और भी जल्दी और आसान बनाता है। यहाँ आपको एक ही जगह पर लिंक कॉपी करने, व्हाट्सएप, ईमेल और QR कोड बनाने जैसे सारे ऑप्शन मिल जाते हैं। सच कहूँ तो, यह बहुत समय बचाता है!
+              आप सोच रहे होंगे कि सीधे गूगल मैप्स से क्यों न शेयर करें? हमारा <a href="https://droppedpin.xyz/">Dropped Pin</a> टूल इस काम को और भी जल्दी और आसान बनाता है। यहाँ आपको एक ही जगह पर लिंक कॉपी करने, व्हाट्सएप, ईमेल और QR कोड बनाने जैसे सारे ऑप्शन मिल जाते हैं। सच कहूँ तो, यह बहुत समय बचाता है!
             </p>
 
           <blockquote className="border-l-4 border-primary pl-4 py-2 my-8">
