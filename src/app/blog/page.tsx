@@ -15,6 +15,17 @@ import { placeholderImages } from '@/lib/placeholder-images';
 
 const blogPosts = [
     {
+    title: 'Dropped Pin का मतलब क्या होता है? - एक आसान गाइड',
+    slug: '/blog/dropped-pin-meaning-hindi',
+    description: 'जानें कि Dropped Pin का क्या मतलब है और इसका उपयोग लोकेशन साझा करने के लिए कैसे किया जाता है। यह गाइड आपको Dropped Pin के अर्थ को समझने में मदद करेगी।',
+    image: {
+      imageUrl: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhqTGI93n731ACX5cwKP3UgcKUq-n8xE47WOud39PcBEmBz67T18N6EI4cxF4XGyRE4AKUaq4hFGTcyBNBQs5MtM57VwehE4kPvBk_99u6I3t1WjFzXL4enkM_lnOUyzDh6yHNtLDhQqddDVJ4vwsfU2YAnVqx6kAjlKn0kk14okdPto4KxgcY7r_Vjh4bA/s320/1760621398.png",
+      imageHint: "map pin"
+    },
+    tags: ['Meaning', 'How-To', 'Hindi', 'Location'],
+    date: 'October 19, 2025',
+  },
+  {
     title: 'iPhone पर पिन कैसे गिराएं: एक आसान गाइड',
     slug: '/blog/how-to-drop-a-pin-on-iphone-hindi',
     description: 'अपने iPhone पर Google Maps में पिन कैसे गिराएं, यह जानें। यह गाइड आपको लोकेशन खोजने, tọa độ प्राप्त करने और उसे आसानी से साझा करने में मदद करेगी।',

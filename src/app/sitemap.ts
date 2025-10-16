@@ -40,6 +40,10 @@ async function getDynamicRoutes(): Promise<MetadataRoute.Sitemap> {
     {
         slug: 'how-to-drop-a-pin-on-iphone-hindi',
         changeFrequency: 'daily',
+    },
+    {
+        slug: 'dropped-pin-meaning-hindi',
+        changeFrequency: 'daily',
     }
   ];
 
