@@ -15,6 +15,14 @@ import { placeholderImages } from '@/lib/placeholder-images';
 
 const blogPosts = [
   {
+    title: 'Snow Day Calculator',
+    slug: '/blog/snow-day-calculator',
+    description: 'Check your chances of a snow day instantly with our Snow Day Calculator. Accurate school closure predictions based on your location and weather updates.',
+    image: placeholderImages[0],
+    tags: ['Tool', 'Weather', 'Calculator'],
+    date: 'October 18, 2025',
+  },
+  {
     title: 'किसी भी लोकेशन का QR कोड कैसे बनाएं?',
     slug: '/blog/location-ka-qr-code-kaise-banayen',
     description:
