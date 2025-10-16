@@ -55,6 +55,17 @@ const blogPosts = [
     tags: ['Tool', 'Weather', 'Calculator'],
     date: 'October 15, 2025',
   },
+    {
+    title: 'Google Maps पर पिन कैसे गिराएं',
+    slug: '/blog/how-to-drop-a-pin-on-google-maps',
+    description: 'Google Maps पर पिन कैसे गिराएं, निर्देशांक कैसे प्राप्त करें, स्थानों को कैसे सहेजें और उन्हें किसी के भी साथ, कहीं भी साझा करने के बारे में एक विस्तृत गाइड।',
+    image: {
+        imageUrl: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhS8SlqVEwhpegP6HKnQFm2R5rG50ByVV0oBvpwWxFbXOAaH2Dz_kU3QzGjY5s2z4AUJOYzTCBANNJWzr7LaklRRvVICUtvZNiT_SveUL5mqxYPeiXIESMpuOztFlGQF4hHZPzbyCJ5dtl9xqqD6vMVBgTMfHRH_RwlQjuEfKa34pYz3P-urQwgX11y0pNI/s320/1760620765.png",
+        imageHint: "cityscape map pins"
+    },
+    tags: ['Guide', 'How-To', 'Google Maps', 'Hindi'],
+    date: 'October 15, 2025',
+  },
   {
     title: 'किसी भी लोकेशन का QR कोड कैसे बनाएं?',
     slug: '/blog/location-ka-qr-code-kaise-banayen',
@@ -89,15 +100,6 @@ const blogPosts = [
       'Dropped Pin का उपयोग करके किसी भी स्थान पर पिन कैसे छोड़ें, tọa표 कैसे प्राप्त करें, और उसे कैसे साझा करें, इस पर एक विस्तृत गाइड।',
     image: placeholderImages.find(p => p.id === '5')!,
     tags: ['Guide', 'How-To', 'Hindi'],
-    date: 'October 15, 2025',
-  },
-  {
-    title: 'Google Maps पर पिन कैसे गिराएं',
-    slug: '/blog/how-to-drop-a-pin-on-google-maps',
-    description:
-      'Google Maps पर पिन कैसे गिराएं, निर्देशांक कैसे प्राप्त करें, स्थानों को कैसे सहेजें और उन्हें किसी के भी साथ, कहीं भी साझा करने के बारे में एक विस्तृत गाइड।',
-    image: placeholderImages.find(p => p.id === '1')!,
-    tags: ['Guide', 'How-To', 'Google Maps', 'Hindi'],
     date: 'October 15, 2025',
   },
   {
@@ -188,3 +190,5 @@ export default function BlogPage() {
     </main>
   );
 }
+
+    

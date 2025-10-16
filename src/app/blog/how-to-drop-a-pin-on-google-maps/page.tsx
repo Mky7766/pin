@@ -10,7 +10,7 @@ import { AuthorBio } from '@/components/blog/author-bio';
 const pageTitle = "Google Maps पर पिन कैसे गिराएं - Dropped Pin Finder";
 const pageDescription = "Google Maps पर पिन कैसे गिराएं, निर्देशांक कैसे प्राप्त करें, स्थानों को कैसे सहेजें और उन्हें किसी के भी साथ, कहीं भी साझा करने के बारे में एक विस्तृत गाइड।";
 const pageUrl = "https://droppedpin.xyz/blog/how-to-drop-a-pin-on-google-maps";
-const featureImage = placeholderImages.find(p => p.id === '1');
+const featureImageUrl = "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhS8SlqVEwhpegP6HKnQFm2R5rG50ByVV0oBvpwWxFbXOAaH2Dz_kU3QzGjY5s2z4AUJOYzTCBANNJWzr7LaklRRvVICUtvZNiT_SveUL5mqxYPeiXIESMpuOztFlGQF4hHZPzbyCJ5dtl9xqqD6vMVBgTMfHRH_RwlQjuEfKa34pYz3P-urQwgX11y0pNI/s320/1760620765.png";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: featureImage!.imageUrl,
-        width: 600,
-        height: 400,
+        url: featureImageUrl,
+        width: 320,
+        height: 320,
         alt: "A cityscape with multiple red map pins.",
       },
     ],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: [featureImage!.imageUrl],
+    images: [featureImageUrl],
   },
 };
 
@@ -46,7 +46,7 @@ const jsonLd = {
   },
   'headline': pageTitle,
   'description': pageDescription,
-  'image': featureImage!.imageUrl,
+  'image': featureImageUrl,
   'author': {
     '@type': 'Organization',
     'name': 'Dropped Pin',
@@ -88,9 +88,6 @@ const VerifiedIcon = () => (
 
 
 export default function BlogPost() {
-  if (!featureImage) {
-    return null;
-  }
   return (
     <>
       <script
@@ -120,11 +117,11 @@ export default function BlogPost() {
 
           <div className="relative h-80 w-full mb-8 rounded-lg overflow-hidden shadow-lg">
             <Image
-              src={featureImage.imageUrl}
+              src={featureImageUrl}
               alt="A cityscape with multiple red map pins."
               fill
               className="object-cover"
-              data-ai-hint={featureImage.imageHint}
+              data-ai-hint="cityscape map pins"
             />
           </div>
 
@@ -201,3 +198,5 @@ export default function BlogPost() {
     </>
   );
 }
+
+    

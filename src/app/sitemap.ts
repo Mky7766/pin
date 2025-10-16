@@ -45,7 +45,9 @@ async function getDynamicRoutes(): Promise<MetadataRoute.Sitemap> {
 
   return posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(),
     changeFrequency: post.changeFrequency,
+    priority: 0.7,
   }));
 }
 
@@ -53,27 +55,39 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/`,
+      lastModified: new Date(),
       changeFrequency: 'daily',
+      priority: 1,
     },
     {
       url: `${baseUrl}/blog`,
+      lastModified: new Date(),
       changeFrequency: 'daily',
+      priority: 0.8,
     },
     {
       url: `${baseUrl}/about`,
-      changeFrequency: 'daily',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
     },
     {
       url: `${baseUrl}/disclaimer`,
-      changeFrequency: 'daily',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
     {
       url: `${baseUrl}/privacy-policy`,
-      changeFrequency: 'daily',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
     {
       url: `${baseUrl}/terms-and-conditions`,
-      changeFrequency: 'daily',
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
   ];
 
@@ -81,3 +95,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [...staticRoutes, ...dynamicRoutes];
 }
+
+    
