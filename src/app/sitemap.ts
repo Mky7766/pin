@@ -1,3 +1,4 @@
+
 import { MetadataRoute } from 'next';
 
 const baseUrl = 'https://droppedpin.xyz';
@@ -31,12 +32,16 @@ async function getDynamicRoutes(): Promise<MetadataRoute.Sitemap> {
     {
       slug: 'snow-day-calculator',
       changeFrequency: 'daily',
+    },
+    {
+        slug: 'dropped-pin-near-me',
+        changeFrequency: 'monthly',
     }
   ];
 
   return posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    changeFrequency: post.changeFrequency as 'daily' | 'yearly',
+    changeFrequency: post.changeFrequency as 'daily' | 'yearly' | 'monthly',
   }));
 }
 
@@ -72,3 +77,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [...staticRoutes, ...dynamicRoutes];
 }
+
+    

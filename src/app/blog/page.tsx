@@ -14,6 +14,17 @@ import { Badge } from '@/components/ui/badge';
 import { placeholderImages } from '@/lib/placeholder-images';
 
 const blogPosts = [
+   {
+    title: 'मेरे आस-पास पिन ड्रॉप (Dropped Pin Near Me) कैसे करें?',
+    slug: '/blog/dropped-pin-near-me',
+    description: 'जानें कि Dropped Pin Near Me का उपयोग करके अपनी वर्तमान लोकेशन कैसे खोजें और साझा करें। हमारा टूल आपकी लाइव लोकेशन तुरंत ढूंढ सकता है।',
+    image: {
+        imageUrl: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjuMPmWioyRJ7MsGeAg9qTI1o2J9yMZ3Rt-jUSWpxrQY_c2d8gDuiVMgIinGNta24TtjJR18Z-gO46Hbym43I7iekew7yEzaAsr664ozZ0omiQER6IkH57QzQFFpcLQhr7Sw71RRVFXox9K_wR7C1GXIFxSaNvSdcq7SC-oQUEt21FtZLnZvDiQVZyUJEiU/s320/top-view-map-blue-background.jpg",
+        imageHint: "map top view"
+    },
+    tags: ['Live Location', 'How-To', 'Hindi', 'Near Me'],
+    date: 'October 18, 2025',
+  },
   {
     title: 'Snow Day Calculator',
     slug: '/blog/snow-day-calculator',
@@ -155,3 +166,5 @@ export default function BlogPage() {
     </main>
   );
 }
+
+    
