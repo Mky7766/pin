@@ -205,12 +205,13 @@ export default function BlogPost() {
           <p>
             जैसे ही आप मैप पर पिन गिराएंगे, नीचे आपको कई बटन दिखाई देंगे। उनमें से एक बटन होगा - <strong>'Generate QR Code'</strong>। बस उस पर क्लिक कर दें।
           </p>
-            <div className="relative h-24 w-full my-6 rounded-lg overflow-hidden shadow-lg">
+            <div className="my-6">
                 <Image
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitMbz3-P5aP6Ey1_6oKDrFVDEf_bYo6YJuQ_4EK3PqGkSow0BY2iP8i__dBz7Zc2hZXNFKLO6Emp0qcgcFEPAcpXTXFj9O0F8wzyAcveE_QWBTwxGueocaRwdeSpbdku4vfoQ8QqURCUoVY18zOM74O0SgKX-DztbbrADfEDWHWlexptJLvb7xPlesm1qy/s320/Screenshot%202025-10-15%20161540.jpg"
-                alt="Generate QR code button"
-                layout="fill"
-                objectFit="contain"
+                  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEitMbz3-P5aP6Ey1_6oKDrFVDEf_bYo6YJuQ_4EK3PqGkSow0BY2iP8i__dBz7Zc2hZXNFKLO6Emp0qcgcFEPAcpXTXFj9O0F8wzyAcveE_QWBTwxGueocaRwdeSpbdku4vfoQ8QqURCUoVY18zOM74O0SgKX-DztbbrADfEDWHWlexptJLvb7xPlesm1qy/s320/Screenshot%202025-10-15%20161540.jpg"
+                  alt="Generate QR code button"
+                  width={320}
+                  height={100}
+                  className="mx-auto rounded-lg shadow-lg"
                 />
             </div>
 
