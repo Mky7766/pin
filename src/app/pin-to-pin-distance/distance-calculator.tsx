@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -7,11 +6,13 @@ import {
   MapPin,
   Trash2,
   MoveHorizontal,
+  Search,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
 
 declare global {
   interface Window {
@@ -25,6 +26,12 @@ export default function DistanceCalculator() {
   const [pinB, setPinB] = useState<{ lat: number; lng: number } | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
   const [nextPin, setNextPin] = useState<'A' | 'B'>('A');
+
+  const [inputA, setInputA] = useState('');
+  const [inputB, setInputB] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
 
   const mapRef = useRef<HTMLDivElement>(null);
   const mapInstance = useRef<any>(null);
@@ -60,7 +67,7 @@ export default function DistanceCalculator() {
     window.mapScriptLoaded = true;
     const script = document.createElement('script');
     script.id = 'google-maps-script';
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=geometry,geocoding`;
     script.async = true;
     script.defer = true;
     script.onload = () => setIsApiReady(true);
@@ -75,17 +82,13 @@ export default function DistanceCalculator() {
     }
   }, [isApiReady]);
 
-  const calculateDistance = (p1: {lat: number, lng: number}, p2: {lat: number, lng: number}) => {
-    const R = 6371; // Radius of the Earth in km
-    const dLat = (p2.lat - p1.lat) * (Math.PI / 180);
-    const dLng = (p2.lng - p1.lng) * (Math.PI / 180);
-    const a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(p1.lat * (Math.PI / 180)) * Math.cos(p2.lat * (Math.PI / 180)) *
-      Math.sin(dLng / 2) * Math.sin(dLng / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    const dist = R * c;
-    setDistance(dist);
+  const calculateAndSetDistance = (p1: {lat: number, lng: number}, p2: {lat: number, lng: number}) => {
+    if (window.google && window.google.maps && window.google.maps.geometry) {
+        const point1 = new window.google.maps.LatLng(p1.lat, p1.lng);
+        const point2 = new window.google.maps.LatLng(p2.lat, p2.lng);
+        const distInMeters = window.google.maps.geometry.spherical.computeDistanceBetween(point1, point2);
+        setDistance(distInMeters / 1000); // Convert to KM
+    }
   };
 
   const drawLine = () => {
@@ -102,38 +105,45 @@ export default function DistanceCalculator() {
       });
       line.setMap(mapInstance.current);
       lineRef.current = line;
+
+      // Fit map to show both markers
+      const bounds = new window.google.maps.LatLngBounds();
+      bounds.extend(new window.google.maps.LatLng(pinA.lat, pinA.lng));
+      bounds.extend(new window.google.maps.LatLng(pinB.lat, pinB.lng));
+      mapInstance.current.fitBounds(bounds);
     }
   };
+  
+  const updatePin = (pin: 'A' | 'B', location: { lat: number; lng: number }, address?: string) => {
+    const marker = pin === 'A' ? markerA : markerB;
+    const setPin = pin === 'A' ? setPinA : setPinB;
+    const setInput = pin === 'A' ? setInputA : setInputB;
+
+    setPin(location);
+    if(address) setInput(address);
+
+    marker.current?.setMap(null);
+    marker.current = new window.google.maps.Marker({
+      position: location,
+      map: mapInstance.current,
+      label: pin,
+    });
+
+    if (pin === 'A' && pinB) {
+        calculateAndSetDistance(location, pinB);
+    } else if (pin === 'B' && pinA) {
+        calculateAndSetDistance(pinA, location);
+    }
+  }
+
 
   const handleMapClick = (e: any) => {
     const lat = e.latLng.lat();
     const lng = e.latLng.lng();
+    const location = { lat, lng };
 
-    if (nextPin === 'A') {
-      setPinA({ lat, lng });
-      markerA.current?.setMap(null);
-      markerA.current = new window.google.maps.Marker({
-        position: { lat, lng },
-        map: mapInstance.current,
-        label: 'A',
-      });
-      setNextPin('B');
-      if (pinB) {
-        calculateDistance({ lat, lng }, pinB);
-      }
-    } else {
-      setPinB({ lat, lng });
-      markerB.current?.setMap(null);
-      markerB.current = new window.google.maps.Marker({
-        position: { lat, lng },
-        map: mapInstance.current,
-        label: 'B',
-      });
-      setNextPin('A');
-      if (pinA) {
-        calculateDistance(pinA, { lat, lng });
-      }
-    }
+    updatePin(nextPin, location);
+    setNextPin(nextPin === 'A' ? 'B' : 'A');
   };
   
   useEffect(() => {
@@ -162,11 +172,57 @@ export default function DistanceCalculator() {
     setPinA(null);
     setPinB(null);
     setDistance(null);
+    setInputA('');
+    setInputB('');
+    setError(null);
     markerA.current?.setMap(null);
     markerB.current?.setMap(null);
     lineRef.current?.setMap(null);
     setNextPin('A');
   };
+
+  const handleGeocode = async () => {
+    if (!inputA || !inputB) {
+      setError('Please enter both locations.');
+      return;
+    }
+    if (!window.google || !window.google.maps) {
+        setError('Google Maps API is not ready.');
+        return;
+    }
+
+    setIsLoading(true);
+    setError(null);
+    const geocoder = new window.google.maps.Geocoder();
+
+    try {
+      const [resultsA, resultsB] = await Promise.all([
+        geocoder.geocode({ address: inputA }),
+        geocoder.geocode({ address: inputB }),
+      ]);
+
+      if (resultsA.results[0] && resultsB.results[0]) {
+        const locA = { lat: resultsA.results[0].geometry.location.lat(), lng: resultsA.results[0].geometry.location.lng() };
+        const locB = { lat: resultsB.results[0].geometry.location.lat(), lng: resultsB.results[0].geometry.location.lng() };
+        
+        updatePin('A', locA, resultsA.results[0].formatted_address);
+        updatePin('B', locB, resultsB.results[0].formatted_address);
+        
+        calculateAndSetDistance(locA, locB);
+        setNextPin('A');
+
+      } else {
+        if(!resultsA.results[0]) setError(`Could not find location for: ${inputA}`);
+        if(!resultsB.results[0]) setError(`Could not find location for: ${inputB}`);
+      }
+    } catch (e: any) {
+      console.error(e);
+      setError(`Geocoding failed: ${e.message}`);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
 
   return (
     <Card className="w-full max-w-4xl mx-auto shadow-lg">
@@ -175,10 +231,37 @@ export default function DistanceCalculator() {
           Pin to Pin Distance
         </CardTitle>
         <CardDescription className="!mt-2">
-          Click on the map to drop Pin A and Pin B, and measure the distance between them.
+          Enter two locations or click on the map to measure the distance between them.
         </CardDescription>
       </CardHeader>
       <CardContent>
+
+        <div className="flex flex-col sm:flex-row gap-4 mb-4">
+            <Input 
+                placeholder="Enter Location A (e.g., Jaipur or 302012)" 
+                value={inputA}
+                onChange={(e) => setInputA(e.target.value)}
+                disabled={isLoading}
+            />
+            <Input 
+                placeholder="Enter Location B (e.g., Delhi or 110001)" 
+                value={inputB}
+                onChange={(e) => setInputB(e.target.value)}
+                disabled={isLoading}
+            />
+            <Button onClick={handleGeocode} disabled={isLoading}>
+                <Search className="mr-2" />
+                {isLoading ? 'Calculating...' : 'Calculate'}
+            </Button>
+        </div>
+        {error && (
+            <Alert variant="destructive" className="mb-4">
+                <AlertCircle className="h-4 w-4" />
+                <AlertTitle>Error</AlertTitle>
+                <AlertDescription>{error}</AlertDescription>
+            </Alert>
+        )}
+
         {apiKeyMissing ? (
             <Alert variant="destructive">
             <AlertCircle className="h-4 w-4" />
@@ -212,7 +295,7 @@ export default function DistanceCalculator() {
             </div>
           )}
           <div className='flex justify-center items-center gap-2'>
-            <Badge>Next Pin: {nextPin}</Badge>
+            <Badge>Next Pin to drop by clicking: {nextPin}</Badge>
             <Button onClick={handleClearPins} variant="destructive">
                 <Trash2 className="mr-2" /> Clear Pins
             </Button>
@@ -222,3 +305,5 @@ export default function DistanceCalculator() {
     </Card>
   );
 }
+
+    
