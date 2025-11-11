@@ -28,6 +28,9 @@ export function Header() {
             <Link href="/">Home</Link>
           </Button>
           <Button variant="ghost" asChild>
+            <Link href="/pin-to-pin-distance">Pin to Pin Distance</Link>
+          </Button>
+          <Button variant="ghost" asChild>
             <Link href="/blog">Blog</Link>
           </Button>
           <Button variant="ghost" asChild>
@@ -56,6 +59,15 @@ export function Header() {
                     asChild
                   >
                     <Link href="/">Home</Link>
+                  </Button>
+                </SheetClose>
+                 <SheetClose asChild>
+                  <Button
+                    variant="ghost"
+                    className="justify-start text-lg"
+                    asChild
+                  >
+                    <Link href="/pin-to-pin-distance">Pin to Pin Distance</Link>
                   </Button>
                 </SheetClose>
                 <SheetClose asChild>
