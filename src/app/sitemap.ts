@@ -3,59 +3,20 @@ import { MetadataRoute } from 'next';
 
 const baseUrl = 'https://droppedpin.xyz';
 
-async function getDynamicRoutes(): Promise<MetadataRoute.Sitemap> {
-  const posts: {slug: string, changeFrequency: 'yearly' | 'monthly' | 'daily'}[] = [
-    {
-      slug: 'how-to-drop-a-pin',
-      changeFrequency: 'daily',
-    },
-    {
-      slug: 'how-to-drop-a-pin-on-google-maps',
-      changeFrequency: 'daily',
-    },
-    {
-      slug: 'how-to-drop-a-pin-on-android-hindi',
-      changeFrequency: 'daily',
-    },
-    {
-      slug: 'how-to-send-a-dropped-pin-hindi',
-      changeFrequency: 'daily',
-    },
-    {
-      slug: 'location-ka-qr-code-kaise-banayen',
-      changeFrequency: 'daily',
-    },
-     {
-      slug: 'how-to-drop-a-pin-on-android',
-      changeFrequency: 'daily',
-    },
-    {
-      slug: 'snow-day-calculator',
-      changeFrequency: 'daily',
-    },
-    {
-        slug: 'dropped-pin-near-me',
-        changeFrequency: 'daily',
-    },
-    {
-        slug: 'how-to-drop-a-pin-on-iphone-hindi',
-        changeFrequency: 'daily',
-    },
-    {
-        slug: 'dropped-pin-meaning-hindi',
-        changeFrequency: 'daily',
-    }
-  ];
+const dynamicRoutes = [
+  'how-to-drop-a-pin',
+  'how-to-drop-a-pin-on-google-maps',
+  'how-to-drop-a-pin-on-android-hindi',
+  'how-to-send-a-dropped-pin-hindi',
+  'location-ka-qr-code-kaise-banayen',
+  'how-to-drop-a-pin-on-android',
+  'snow-day-calculator',
+  'dropped-pin-near-me',
+  'how-to-drop-a-pin-on-iphone-hindi',
+  'dropped-pin-meaning-hindi',
+];
 
-  return posts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(),
-    changeFrequency: post.changeFrequency,
-    priority: 0.7,
-  }));
-}
-
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/`,
@@ -95,9 +56,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  const dynamicRoutes = await getDynamicRoutes();
+  const blogPostRoutes: MetadataRoute.Sitemap = dynamicRoutes.map((slug) => ({
+    url: `${baseUrl}/blog/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'daily',
+    priority: 0.7,
+  }));
 
-  return [...staticRoutes, ...dynamicRoutes];
+  return [...staticRoutes, ...blogPostRoutes];
 }
-
-    
