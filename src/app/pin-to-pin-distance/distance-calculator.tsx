@@ -7,6 +7,7 @@ import {
   Trash2,
   MoveHorizontal,
   Search,
+  Route,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -37,7 +38,7 @@ const loadGoogleMapsScript = (apiKey: string, callback: () => void) => {
 
   const script = document.createElement('script');
   script.id = 'google-maps-script';
-  script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=geometry,geocoding`;
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=geometry,geocoding,routes`;
   script.async = true;
   script.defer = true;
   document.head.appendChild(script);
@@ -47,11 +48,13 @@ export default function DistanceCalculator() {
   const [pinA, setPinA] = useState<{ lat: number; lng: number } | null>(null);
   const [pinB, setPinB] = useState<{ lat: number; lng: number } | null>(null);
   const [distance, setDistance] = useState<number | null>(null);
+  const [travelInfo, setTravelInfo] = useState<{distance: string, duration: string} | null>(null);
   const [nextPin, setNextPin] = useState<'A' | 'B'>('A');
 
   const [inputA, setInputA] = useState('');
   const [inputB, setInputB] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isRouteLoading, setIsRouteLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
 
@@ -60,6 +63,8 @@ export default function DistanceCalculator() {
   const markerA = useRef<any>(null);
   const markerB = useRef<any>(null);
   const lineRef = useRef<any>(null);
+  const directionsRendererRef = useRef<any>(null);
+
 
   const [isApiReady, setIsApiReady] = useState(false);
   const [apiKeyMissing, setApiKeyMissing] = useState(false);
@@ -119,6 +124,14 @@ export default function DistanceCalculator() {
 
     setPin(location);
     if(address) setInput(address);
+    else if(window.google) {
+        const geocoder = new window.google.maps.Geocoder();
+        geocoder.geocode({ location }, (results: any, status: any) => {
+            if(status === 'OK' && results[0]) {
+                setInput(results[0].formatted_address);
+            }
+        });
+    }
 
     marker.current?.setMap(null);
     marker.current = new window.google.maps.Marker({
@@ -162,20 +175,25 @@ export default function DistanceCalculator() {
       gestureHandling: 'greedy',
       rotateControl: true,
     });
+    
+    directionsRendererRef.current = new window.google.maps.DirectionsRenderer();
+    directionsRendererRef.current.setMap(mapInstance.current);
 
     mapInstance.current.addListener('click', handleMapClick);
   };
   
-  const handleClearPins = () => {
+  const handleClear = () => {
     setPinA(null);
     setPinB(null);
     setDistance(null);
+    setTravelInfo(null);
     setInputA('');
     setInputB('');
     setError(null);
     markerA.current?.setMap(null);
     markerB.current?.setMap(null);
     lineRef.current?.setMap(null);
+    directionsRendererRef.current?.setDirections({routes: []});
     setNextPin('A');
   };
 
@@ -191,6 +209,8 @@ export default function DistanceCalculator() {
 
     setIsLoading(true);
     setError(null);
+    handleClear();
+
     const geocoder = new window.google.maps.Geocoder();
 
     try {
@@ -219,6 +239,44 @@ export default function DistanceCalculator() {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleGetDirections = async () => {
+    if (!pinA || !pinB) {
+        setError('Please set both Pin A and Pin B first.');
+        return;
+    }
+    if (!window.google) {
+        setError('Google Maps not loaded.');
+        return;
+    }
+
+    setIsRouteLoading(true);
+    setError(null);
+
+    const directionsService = new window.google.maps.DirectionsService();
+
+    directionsService.route(
+        {
+            origin: pinA,
+            destination: pinB,
+            travelMode: window.google.maps.TravelMode.DRIVING,
+        },
+        (result: any, status: any) => {
+            setIsRouteLoading(false);
+            if (status === window.google.maps.DirectionsStatus.OK) {
+                lineRef.current?.setMap(null); // Hide straight line
+                directionsRendererRef.current.setDirections(result);
+                const route = result.routes[0].legs[0];
+                setTravelInfo({
+                    distance: route.distance.text,
+                    duration: route.duration.text
+                });
+            } else {
+                setError(`Directions request failed due to ${status}`);
+            }
+        }
+    );
   };
 
 
@@ -287,15 +345,25 @@ export default function DistanceCalculator() {
             </p>
           </div>
           {distance !== null && (
-            <div className="font-bold text-2xl">
+            <div className="font-bold text-xl">
               <MoveHorizontal className="inline-block mr-2 h-6 w-6" />
-              Distance: <span className="text-primary">{distance.toFixed(2)} km</span>
+              Straight Line Distance: <span className="text-primary">{distance.toFixed(2)} km</span>
             </div>
           )}
-          <div className='flex justify-center items-center gap-2'>
+          {travelInfo && (
+             <div className="font-bold text-xl">
+                <Route className="inline-block mr-2 h-6 w-6" />
+                Travel Distance: <span className="text-primary">{travelInfo.distance}</span> (~{travelInfo.duration})
+            </div>
+          )}
+          <div className='flex justify-center items-center gap-2 flex-wrap'>
             <Badge>Next Pin to drop by clicking: {nextPin}</Badge>
-            <Button onClick={handleClearPins} variant="destructive">
-                <Trash2 className="mr-2" /> Clear Pins
+            <Button onClick={handleGetDirections} variant="default" disabled={!pinA || !pinB || isRouteLoading}>
+                <Route className="mr-2" />
+                {isRouteLoading ? 'Getting Route...' : 'Get Directions'}
+            </Button>
+            <Button onClick={handleClear} variant="destructive">
+                <Trash2 className="mr-2" /> Clear All
             </Button>
           </div>
         </div>
