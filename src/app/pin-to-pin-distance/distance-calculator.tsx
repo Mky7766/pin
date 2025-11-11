@@ -17,9 +17,31 @@ import { Input } from '@/components/ui/input';
 declare global {
   interface Window {
     google: any;
-    mapScriptLoaded: boolean;
+    initMap: () => void;
   }
 }
+
+const loadGoogleMapsScript = (apiKey: string, callback: () => void) => {
+  if (window.google && window.google.maps) {
+    callback();
+    return;
+  }
+
+  const existingScript = document.getElementById('google-maps-script');
+  if (existingScript) {
+    existingScript.addEventListener('load', callback);
+    return;
+  }
+
+  window.initMap = callback;
+
+  const script = document.createElement('script');
+  script.id = 'google-maps-script';
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=geometry,geocoding`;
+  script.async = true;
+  script.defer = true;
+  document.head.appendChild(script);
+};
 
 export default function DistanceCalculator() {
   const [pinA, setPinA] = useState<{ lat: number; lng: number } | null>(null);
@@ -48,31 +70,7 @@ export default function DistanceCalculator() {
       setApiKeyMissing(true);
       return;
     }
-
-    if (window.google && window.google.maps) {
-      setIsApiReady(true);
-      return;
-    }
-    
-    if (window.mapScriptLoaded) {
-      const interval = setInterval(() => {
-        if (window.google && window.google.maps) {
-          setIsApiReady(true);
-          clearInterval(interval);
-        }
-      }, 100);
-      return;
-    }
-
-    window.mapScriptLoaded = true;
-    const script = document.createElement('script');
-    script.id = 'google-maps-script';
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=geometry,geocoding`;
-    script.async = true;
-    script.defer = true;
-    script.onload = () => setIsApiReady(true);
-    document.head.appendChild(script);
-
+    loadGoogleMapsScript(apiKey, () => setIsApiReady(true));
   }, []);
 
 
@@ -305,5 +303,3 @@ export default function DistanceCalculator() {
     </Card>
   );
 }
-
-    
