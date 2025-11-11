@@ -8,6 +8,7 @@ import {
   MoveHorizontal,
   Search,
   Route,
+  Link as LinkIcon,
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -56,6 +57,7 @@ export default function DistanceCalculator() {
   const [isLoading, setIsLoading] = useState(false);
   const [isRouteLoading, setIsRouteLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [googleMapsUrl, setGoogleMapsUrl] = useState<string>('');
 
 
   const mapRef = useRef<HTMLDivElement>(null);
@@ -91,6 +93,7 @@ export default function DistanceCalculator() {
         const point2 = new window.google.maps.LatLng(p2.lat, p2.lng);
         const distInMeters = window.google.maps.geometry.spherical.computeDistanceBetween(point1, point2);
         setDistance(distInMeters / 1000); // Convert to KM
+        setGoogleMapsUrl(`https://www.google.com/maps/dir/${p1.lat},${p1.lng}/${p2.lat},${p2.lng}`);
     }
   };
 
@@ -153,13 +156,25 @@ export default function DistanceCalculator() {
     const lng = e.latLng.lng();
     const location = { lat, lng };
 
+    if(directionsRendererRef.current) {
+        directionsRendererRef.current.setDirections({routes: []}); // Clear previous routes
+    }
+    if(lineRef.current) {
+        lineRef.current.setMap(null); // Clear straight line
+    }
+    setTravelInfo(null); // Clear travel info
+
+
     updatePin(nextPin, location);
     setNextPin(nextPin === 'A' ? 'B' : 'A');
   };
   
   useEffect(() => {
     if(pinA && pinB){
-      drawLine();
+      // Only draw line if no route is displayed
+      if (!directionsRendererRef.current || !directionsRendererRef.current.getDirections() || directionsRendererRef.current.getDirections().routes.length === 0) {
+        drawLine();
+      }
     }
   }, [pinA, pinB]);
 
@@ -190,6 +205,7 @@ export default function DistanceCalculator() {
     setInputA('');
     setInputB('');
     setError(null);
+    setGoogleMapsUrl('');
     markerA.current?.setMap(null);
     markerB.current?.setMap(null);
     lineRef.current?.setMap(null);
@@ -209,7 +225,17 @@ export default function DistanceCalculator() {
 
     setIsLoading(true);
     setError(null);
-    handleClear();
+    // Clear previous state but keep inputs
+    setPinA(null);
+    setPinB(null);
+    setDistance(null);
+    setTravelInfo(null);
+    setGoogleMapsUrl('');
+    markerA.current?.setMap(null);
+    markerB.current?.setMap(null);
+    lineRef.current?.setMap(null);
+    directionsRendererRef.current?.setDirections({routes: []});
+
 
     const geocoder = new window.google.maps.Geocoder();
 
@@ -272,6 +298,7 @@ export default function DistanceCalculator() {
                     distance: route.distance.text,
                     duration: route.duration.text
                 });
+                setGoogleMapsUrl(`https://www.google.com/maps/dir/?api=1&origin=${pinA.lat},${pinA.lng}&destination=${pinB.lat},${pinB.lng}`);
             } else {
                 setError(`Directions request failed due to ${status}`);
             }
@@ -361,6 +388,11 @@ export default function DistanceCalculator() {
             <Button onClick={handleGetDirections} variant="default" disabled={!pinA || !pinB || isRouteLoading}>
                 <Route className="mr-2" />
                 {isRouteLoading ? 'Getting Route...' : 'Get Directions'}
+            </Button>
+            <Button asChild variant="outline" disabled={!googleMapsUrl}>
+                <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer">
+                    <LinkIcon className="mr-2" /> Open in Google Maps
+                </a>
             </Button>
             <Button onClick={handleClear} variant="destructive">
                 <Trash2 className="mr-2" /> Clear All
